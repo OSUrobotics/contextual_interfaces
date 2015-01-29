@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <script src="eventemitter2.min.js"></script>
+    <script src="roslib.min.js"></script>
+    <script src="jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="controls.css">
+    <script>
+var ros = new ROSLIB.Ros({
+	url : 'ws://localhost:9090'
+});
+ros.on('connection', function() {
+	console.log('Connected to websocket server.');
+});
+var transitionListener = new ROSLIB.Topic({
+	ros: ros,
+	name: '/transition',
+	messageType: 'privacy_zones/Transition'
+});
+
+var getControlsClient = new ROSLIB.Service({
+	ros: ros,
+	name: '/get_devices_in_zone',
+	serviceType: 'privacy_zones/DevicesInZone'
+});
+
+var updateControlClient = new ROSLIB.Service({
+	ros: ros,
+	name: '/peac/update_control',
+	serviceType: 'peac_bridge/UpdateControl'
+});
+
+transitionListener.subscribe(function(msg) {
+	request = new ROSLIB.ServiceRequest({zone : msg.zone.name})
+	if(msg.action==1) { //enter
+		console.log("Entered " + msg.zone.name)
+		getControlsClient.callService(request, function(resp) {
+			$(resp.controls).each(function() {
+				controlbox = makeControl(this);
+				$("body").append(controlBox);
+			})
+		})
+	} else { //exit
+		console.log("Exited " + msg.zone.name)
+		elem = $(".control[id^="+msg.zone.name+"ZaZa]");
+
+		// don't remove controls that the use is hovering over
+		if(!elem.data('hover'))
+			elem.remove();
+		else {
+			// instead, wait until they're done
+			elem.bind('mouseleave.leftover', function() {
+				$(this).remove();
+			})
+		}
+	}
+})
+
+function makeControl(zoneControl) {
+	id = zoneControl["zone"] + "ZaZa" + zoneControl["controlId"];
+	currentElems = $('#'+id);
+	if(currentElems.length > 0) { //if we've already added this element, just return the existing one
+		// in case this was a leftover element (exited, but was hovered, unbind the remove event)
+		// so it sticks around since we reentered
+		currentElems.unbind('mouseleave.leftover');
+		return currentElems;
+	}
+
+	controlBox = $("#controlTemplate").clone();
+	controlBox.data("numVal", 0); //placeholder - assume all controls are off at first
+	controlBox.attr("id", id);
+	controlBox.children("button").text("Turn On");
+	controlBox.children("h2").text(zoneControl["zone"] + " " + zoneControl["name"]);
+	controlBox.show();
+	controlBox.css("display", "inline-block");
+	controlBox.children('button').click(function(){
+		req = new ROSLIB.ServiceRequest({
+			controlId: zoneControl["controlId"],
+			numVal: Number(!Number($(this).parent().data("numVal")))
+		});
+		updateControlClient.callService(req, function(resp){
+			respBox = $(".control#"+zoneControl["zone"]+"ZaZa"+resp.control.controlId)
+			if(resp.control.numVal==1) {
+				respBox.children('button').text('Turn Off');
+			}
+
+			if(resp.control.numVal==0) {
+				respBox.children('button').text('Turn On');
+			}
+			respBox.data("numVal", resp.control.numVal)
+		});
+	});
+	controlBox.hover(function(){
+		console.log('hover')
+		$(this).data('hover', true);
+	},
+	function(){
+		console.log('hover out')
+		$(this).data('hover', false);
+	});
+	controlBox.data('hover', false)
+	return controlBox;
+}
+
+</script>
+
+<body>
+
+<div class="control" style="display:none" id="controlTemplate">
+<h2>CONTROL NAME</h2>
+<button>ON/OFF</button>
+</div>
+
+</body>
+</html>

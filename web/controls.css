@@ -1,0 +1,12 @@
+div.control {
+	border: 1px solid black;
+	padding: 1em;
+	clear: none;
+	display: inline-block;
+	text-align: center;
+}
+
+div.control button {
+	padding: 4em;
+	font-size: large;
+}
