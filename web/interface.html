@@ -67,9 +67,14 @@ function makeControl(zoneControl) {
 	}
 
 	controlBox = $("#controlTemplate").clone();
-	controlBox.data("numVal", 0); //placeholder - assume all controls are off at first
+	controlBox.data("numVal", zoneControl.numVal); //placeholder - assume all controls are off at first
 	controlBox.attr("id", id);
-	controlBox.children("button").text("Turn On");
+
+	if(zoneControl.numVal == 0)
+		controlBox.children("button").text("Turn On");
+	if(zoneControl.numVal == 1)
+		controlBox.children("button").text("Turn Off");
+
 	controlBox.children("h2").text(zoneControl["zone"] + " " + zoneControl["name"]);
 	controlBox.show();
 	controlBox.css("display", "inline-block");
@@ -91,11 +96,9 @@ function makeControl(zoneControl) {
 		});
 	});
 	controlBox.hover(function(){
-		console.log('hover')
 		$(this).data('hover', true);
 	},
 	function(){
-		console.log('hover out')
 		$(this).data('hover', false);
 	});
 	controlBox.data('hover', false)
