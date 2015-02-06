@@ -72,7 +72,7 @@ function makeControl(zoneControl) {
 
 	if(zoneControl.numVal == 0)
 		controlBox.children("button").text("Turn On");
-	if(zoneControl.numVal == 1)
+	if(zoneControl.numVal == 100)
 		controlBox.children("button").text("Turn Off");
 
 	controlBox.children("h2").text(zoneControl["zone"] + " " + zoneControl["name"]);
@@ -85,7 +85,7 @@ function makeControl(zoneControl) {
 		});
 		updateControlClient.callService(req, function(resp){
 			respBox = $(".control#"+zoneControl["zone"]+"ZaZa"+resp.control.controlId)
-			if(resp.control.numVal==1) {
+			if(resp.control.numVal>0) {
 				respBox.children('button').text('Turn Off');
 			}
 
