@@ -1,0 +1,3721 @@
+{
+  "4096": {
+    "controlId": 4096, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4097": {
+    "controlId": 4097, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4098": {
+    "controlId": 4098, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4099": {
+    "controlId": 4099, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4100": {
+    "controlId": 4100, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4101": {
+    "controlId": 4101, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4102": {
+    "controlId": 4102, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4103": {
+    "controlId": 4103, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4104": {
+    "controlId": 4104, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4105": {
+    "controlId": 4105, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4106": {
+    "controlId": 4106, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4107": {
+    "controlId": 4107, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4108": {
+    "controlId": 4108, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4109": {
+    "controlId": 4109, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2072": {
+    "controlId": 2072, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2073": {
+    "controlId": 2073, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2075": {
+    "controlId": 2075, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2076": {
+    "controlId": 2076, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2077": {
+    "controlId": 2077, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2078": {
+    "controlId": 2078, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2079": {
+    "controlId": 2079, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2080": {
+    "controlId": 2080, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2081": {
+    "controlId": 2081, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2082": {
+    "controlId": 2082, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2083": {
+    "controlId": 2083, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2084": {
+    "controlId": 2084, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2085": {
+    "controlId": 2085, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2086": {
+    "controlId": 2086, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2087": {
+    "controlId": 2087, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2088": {
+    "controlId": 2088, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2090": {
+    "controlId": 2090, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2091": {
+    "controlId": 2091, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2092": {
+    "controlId": 2092, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2093": {
+    "controlId": 2093, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2094": {
+    "controlId": 2094, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2096": {
+    "controlId": 2096, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2099": {
+    "controlId": 2099, 
+    "widget": "infoDisplay", 
+    "options": {
+      "textPost": "F", 
+      "textPre": ""
+    }
+  }, 
+  "2100": {
+    "controlId": 2100, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2101": {
+    "controlId": 2101, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2102": {
+    "controlId": 2102, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2103": {
+    "controlId": 2103, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2104": {
+    "controlId": 2104, 
+    "widget": "infoDisplay", 
+    "options": {
+      "textPost": "F", 
+      "textPre": ""
+    }
+  }, 
+  "2105": {
+    "controlId": 2105, 
+    "widget": "infoDisplay", 
+    "options": {
+      "textPost": "F", 
+      "textPre": ""
+    }
+  }, 
+  "2106": {
+    "controlId": 2106, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4177": {
+    "controlId": 4177, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4178": {
+    "controlId": 4178, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4179": {
+    "controlId": 4179, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4180": {
+    "controlId": 4180, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4181": {
+    "controlId": 4181, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4182": {
+    "controlId": 4182, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4183": {
+    "controlId": 4183, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4184": {
+    "controlId": 4184, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4185": {
+    "controlId": 4185, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4186": {
+    "controlId": 4186, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4187": {
+    "controlId": 4187, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4188": {
+    "controlId": 4188, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4189": {
+    "controlId": 4189, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4190": {
+    "controlId": 4190, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4191": {
+    "controlId": 4191, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4192": {
+    "controlId": 4192, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9167;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "4193": {
+    "controlId": 4193, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4194": {
+    "controlId": 4194, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "4195": {
+    "controlId": 4195, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4196": {
+    "controlId": 4196, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4197": {
+    "controlId": 4197, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4198": {
+    "controlId": 4198, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4199": {
+    "controlId": 4199, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4200": {
+    "controlId": 4200, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4201": {
+    "controlId": 4201, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4202": {
+    "controlId": 4202, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4203": {
+    "controlId": 4203, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4204": {
+    "controlId": 4204, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9208;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "4205": {
+    "controlId": 4205, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4206": {
+    "controlId": 4206, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9654;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "4207": {
+    "controlId": 4207, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
+    }
+  }, 
+  "4208": {
+    "controlId": 4208, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4209": {
+    "controlId": 4209, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4210": {
+    "controlId": 4210, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4211": {
+    "controlId": 4211, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4212": {
+    "controlId": 4212, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4213": {
+    "controlId": 4213, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "4214": {
+    "controlId": 4214, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4215": {
+    "controlId": 4215, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4216": {
+    "controlId": 4216, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4217": {
+    "controlId": 4217, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4218": {
+    "controlId": 4218, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4219": {
+    "controlId": 4219, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4220": {
+    "controlId": 4220, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4221": {
+    "controlId": 4221, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4222": {
+    "controlId": 4222, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4223": {
+    "controlId": 4223, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4224": {
+    "controlId": 4224, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4226": {
+    "controlId": 4226, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4227": {
+    "controlId": 4227, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4228": {
+    "controlId": 4228, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4229": {
+    "controlId": 4229, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4230": {
+    "controlId": 4230, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2209": {
+    "controlId": 2209, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">\u25b2</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "2210": {
+    "controlId": 2210, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">\u25bc</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "2211": {
+    "controlId": 2211, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#11203;<span>", 
+      "type": "momentary"
+    }
+  }, 
+  "2212": {
+    "controlId": 2212, 
+    "widget": "button", 
+    "options": {
+      "display_name": "No Sky", 
+      "type": "momentary"
+    }
+  }, 
+  "2213": {
+    "controlId": 2213, 
+    "widget": "button", 
+    "options": {
+      "display_name": "No Light", 
+      "type": "momentary"
+    }
+  }, 
+  "2214": {
+    "controlId": 2214, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "6322": {
+    "controlId": 6322, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "6962": {
+    "controlId": 6962, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "6963": {
+    "controlId": 6963, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2290": {
+    "controlId": 2290, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2291": {
+    "controlId": 2291, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2292": {
+    "controlId": 2292, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2293": {
+    "controlId": 2293, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2294": {
+    "controlId": 2294, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2295": {
+    "controlId": 2295, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2296": {
+    "controlId": 2296, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2297": {
+    "controlId": 2297, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2298": {
+    "controlId": 2298, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2304": {
+    "controlId": 2304, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2305": {
+    "controlId": 2305, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2306": {
+    "controlId": 2306, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2307": {
+    "controlId": 2307, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2308": {
+    "controlId": 2308, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2309": {
+    "controlId": 2309, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2310": {
+    "controlId": 2310, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2311": {
+    "controlId": 2311, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2312": {
+    "controlId": 2312, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2313": {
+    "controlId": 2313, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2315": {
+    "controlId": 2315, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2316": {
+    "controlId": 2316, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2317": {
+    "controlId": 2317, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2318": {
+    "controlId": 2318, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2319": {
+    "controlId": 2319, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2320": {
+    "controlId": 2320, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2321": {
+    "controlId": 2321, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2322": {
+    "controlId": 2322, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2323": {
+    "controlId": 2323, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2324": {
+    "controlId": 2324, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2325": {
+    "controlId": 2325, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "2326": {
+    "controlId": 2326, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4620": {
+    "controlId": 4620, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4621": {
+    "controlId": 4621, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4622": {
+    "controlId": 4622, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4623": {
+    "controlId": 4623, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4624": {
+    "controlId": 4624, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4823": {
+    "controlId": 4823, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4824": {
+    "controlId": 4824, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4825": {
+    "controlId": 4825, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4827": {
+    "controlId": 4827, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4828": {
+    "controlId": 4828, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4831": {
+    "controlId": 4831, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4832": {
+    "controlId": 4832, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4843": {
+    "controlId": 4843, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4863": {
+    "controlId": 4863, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4874": {
+    "controlId": 4874, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4884": {
+    "controlId": 4884, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4889": {
+    "controlId": 4889, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "4891": {
+    "controlId": 4891, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4892": {
+    "controlId": 4892, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4893": {
+    "controlId": 4893, 
+    "widget": "infoDisplay", 
+    "options": {
+      "textPost": "", 
+      "textPre": ""
+    }
+  }, 
+  "4894": {
+    "controlId": 4894, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4895": {
+    "controlId": 4895, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4896": {
+    "controlId": 4896, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4897": {
+    "controlId": 4897, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4898": {
+    "controlId": 4898, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4899": {
+    "controlId": 4899, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4900": {
+    "controlId": 4900, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4901": {
+    "controlId": 4901, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4902": {
+    "controlId": 4902, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4903": {
+    "controlId": 4903, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4904": {
+    "controlId": 4904, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4905": {
+    "controlId": 4905, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4906": {
+    "controlId": 4906, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4907": {
+    "controlId": 4907, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4908": {
+    "controlId": 4908, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4909": {
+    "controlId": 4909, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4910": {
+    "controlId": 4910, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4911": {
+    "controlId": 4911, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4912": {
+    "controlId": 4912, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4913": {
+    "controlId": 4913, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4914": {
+    "controlId": 4914, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4915": {
+    "controlId": 4915, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4916": {
+    "controlId": 4916, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4917": {
+    "controlId": 4917, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4918": {
+    "controlId": 4918, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4919": {
+    "controlId": 4919, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4920": {
+    "controlId": 4920, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4921": {
+    "controlId": 4921, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4922": {
+    "controlId": 4922, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4923": {
+    "controlId": 4923, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4924": {
+    "controlId": 4924, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4925": {
+    "controlId": 4925, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4926": {
+    "controlId": 4926, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4927": {
+    "controlId": 4927, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4928": {
+    "controlId": 4928, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4929": {
+    "controlId": 4929, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4930": {
+    "controlId": 4930, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4931": {
+    "controlId": 4931, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4932": {
+    "controlId": 4932, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4933": {
+    "controlId": 4933, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4934": {
+    "controlId": 4934, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4935": {
+    "controlId": 4935, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4936": {
+    "controlId": 4936, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4937": {
+    "controlId": 4937, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4938": {
+    "controlId": 4938, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4939": {
+    "controlId": 4939, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "6993": {
+    "controlId": 6993, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5097": {
+    "controlId": 5097, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5098": {
+    "controlId": 5098, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5099": {
+    "controlId": 5099, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5100": {
+    "controlId": 5100, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5101": {
+    "controlId": 5101, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5102": {
+    "controlId": 5102, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5103": {
+    "controlId": 5103, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5104": {
+    "controlId": 5104, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5105": {
+    "controlId": 5105, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5106": {
+    "controlId": 5106, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5107": {
+    "controlId": 5107, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5108": {
+    "controlId": 5108, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5109": {
+    "controlId": 5109, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5110": {
+    "controlId": 5110, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5111": {
+    "controlId": 5111, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5112": {
+    "controlId": 5112, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5113": {
+    "controlId": 5113, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5114": {
+    "controlId": 5114, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5115": {
+    "controlId": 5115, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5116": {
+    "controlId": 5116, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5117": {
+    "controlId": 5117, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5118": {
+    "controlId": 5118, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5119": {
+    "controlId": 5119, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5120": {
+    "controlId": 5120, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5121": {
+    "controlId": 5121, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5122": {
+    "controlId": 5122, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5123": {
+    "controlId": 5123, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5124": {
+    "controlId": 5124, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5125": {
+    "controlId": 5125, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5126": {
+    "controlId": 5126, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5127": {
+    "controlId": 5127, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5128": {
+    "controlId": 5128, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5129": {
+    "controlId": 5129, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5130": {
+    "controlId": 5130, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5131": {
+    "controlId": 5131, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5132": {
+    "controlId": 5132, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5133": {
+    "controlId": 5133, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5134": {
+    "controlId": 5134, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5135": {
+    "controlId": 5135, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5136": {
+    "controlId": 5136, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5137": {
+    "controlId": 5137, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5138": {
+    "controlId": 5138, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5139": {
+    "controlId": 5139, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5140": {
+    "controlId": 5140, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5141": {
+    "controlId": 5141, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5142": {
+    "controlId": 5142, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5143": {
+    "controlId": 5143, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5144": {
+    "controlId": 5144, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5145": {
+    "controlId": 5145, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5146": {
+    "controlId": 5146, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5147": {
+    "controlId": 5147, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5148": {
+    "controlId": 5148, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5149": {
+    "controlId": 5149, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5150": {
+    "controlId": 5150, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5151": {
+    "controlId": 5151, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5152": {
+    "controlId": 5152, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5153": {
+    "controlId": 5153, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5154": {
+    "controlId": 5154, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5155": {
+    "controlId": 5155, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5204": {
+    "controlId": 5204, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5205": {
+    "controlId": 5205, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5206": {
+    "controlId": 5206, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5207": {
+    "controlId": 5207, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5208": {
+    "controlId": 5208, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5209": {
+    "controlId": 5209, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5210": {
+    "controlId": 5210, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5211": {
+    "controlId": 5211, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5212": {
+    "controlId": 5212, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5213": {
+    "controlId": 5213, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5214": {
+    "controlId": 5214, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5215": {
+    "controlId": 5215, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5216": {
+    "controlId": 5216, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5217": {
+    "controlId": 5217, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5218": {
+    "controlId": 5218, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5219": {
+    "controlId": 5219, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5220": {
+    "controlId": 5220, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5221": {
+    "controlId": 5221, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5222": {
+    "controlId": 5222, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5223": {
+    "controlId": 5223, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5224": {
+    "controlId": 5224, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5225": {
+    "controlId": 5225, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5226": {
+    "controlId": 5226, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5227": {
+    "controlId": 5227, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5228": {
+    "controlId": 5228, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5229": {
+    "controlId": 5229, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5230": {
+    "controlId": 5230, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5231": {
+    "controlId": 5231, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5232": {
+    "controlId": 5232, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5233": {
+    "controlId": 5233, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5234": {
+    "controlId": 5234, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5235": {
+    "controlId": 5235, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5236": {
+    "controlId": 5236, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5237": {
+    "controlId": 5237, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5238": {
+    "controlId": 5238, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5239": {
+    "controlId": 5239, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5240": {
+    "controlId": 5240, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5241": {
+    "controlId": 5241, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5242": {
+    "controlId": 5242, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5243": {
+    "controlId": 5243, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5244": {
+    "controlId": 5244, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5245": {
+    "controlId": 5245, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5246": {
+    "controlId": 5246, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5247": {
+    "controlId": 5247, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5248": {
+    "controlId": 5248, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5249": {
+    "controlId": 5249, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5250": {
+    "controlId": 5250, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5251": {
+    "controlId": 5251, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "6964": {
+    "controlId": 6964, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5390": {
+    "controlId": 5390, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5392": {
+    "controlId": 5392, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3353": {
+    "controlId": 3353, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3354": {
+    "controlId": 3354, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3355": {
+    "controlId": 3355, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3356": {
+    "controlId": 3356, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3357": {
+    "controlId": 3357, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3358": {
+    "controlId": 3358, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3359": {
+    "controlId": 3359, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3360": {
+    "controlId": 3360, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3361": {
+    "controlId": 3361, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3362": {
+    "controlId": 3362, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3363": {
+    "controlId": 3363, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3364": {
+    "controlId": 3364, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3365": {
+    "controlId": 3365, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3366": {
+    "controlId": 3366, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3367": {
+    "controlId": 3367, 
+    "widget": "button", 
+    "options": {
+      "display_name": "Ch <span class=\"symbol\">\u25bc</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "3368": {
+    "controlId": 3368, 
+    "widget": "button", 
+    "options": {
+      "display_name": "Ch <span class=\"symbol\">\u25b2</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "3369": {
+    "controlId": 3369, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3370": {
+    "controlId": 3370, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3371": {
+    "controlId": 3371, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3372": {
+    "controlId": 3372, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "3373": {
+    "controlId": 3373, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3374": {
+    "controlId": 3374, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3375": {
+    "controlId": 3375, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3376": {
+    "controlId": 3376, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3377": {
+    "controlId": 3377, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3378": {
+    "controlId": 3378, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3379": {
+    "controlId": 3379, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3380": {
+    "controlId": 3380, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3381": {
+    "controlId": 3381, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3382": {
+    "controlId": 3382, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3383": {
+    "controlId": 3383, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3384": {
+    "controlId": 3384, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3385": {
+    "controlId": 3385, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3386": {
+    "controlId": 3386, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3387": {
+    "controlId": 3387, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3388": {
+    "controlId": 3388, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3389": {
+    "controlId": 3389, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3390": {
+    "controlId": 3390, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3391": {
+    "controlId": 3391, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3392": {
+    "controlId": 3392, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3393": {
+    "controlId": 3393, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9654;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "3394": {
+    "controlId": 3394, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3395": {
+    "controlId": 3395, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3396": {
+    "controlId": 3396, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "3397": {
+    "controlId": 3397, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3398": {
+    "controlId": 3398, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3399": {
+    "controlId": 3399, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3400": {
+    "controlId": 3400, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3401": {
+    "controlId": 3401, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "3402": {
+    "controlId": 3402, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5459": {
+    "controlId": 5459, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5460": {
+    "controlId": 5460, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5461": {
+    "controlId": 5461, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5462": {
+    "controlId": 5462, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5463": {
+    "controlId": 5463, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5464": {
+    "controlId": 5464, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5465": {
+    "controlId": 5465, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5466": {
+    "controlId": 5466, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5467": {
+    "controlId": 5467, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5468": {
+    "controlId": 5468, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5469": {
+    "controlId": 5469, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5470": {
+    "controlId": 5470, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5471": {
+    "controlId": 5471, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5472": {
+    "controlId": 5472, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<span class=\"symbol\">&#9167;</span>", 
+      "type": "momentary"
+    }
+  }, 
+  "5473": {
+    "controlId": 5473, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5474": {
+    "controlId": 5474, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5475": {
+    "controlId": 5475, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5477": {
+    "controlId": 5477, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5478": {
+    "controlId": 5478, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5479": {
+    "controlId": 5479, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5480": {
+    "controlId": 5480, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5481": {
+    "controlId": 5481, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5482": {
+    "controlId": 5482, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5483": {
+    "controlId": 5483, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5484": {
+    "controlId": 5484, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5485": {
+    "controlId": 5485, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5486": {
+    "controlId": 5486, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5487": {
+    "controlId": 5487, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5488": {
+    "controlId": 5488, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5489": {
+    "controlId": 5489, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5490": {
+    "controlId": 5490, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5491": {
+    "controlId": 5491, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5492": {
+    "controlId": 5492, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5493": {
+    "controlId": 5493, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5494": {
+    "controlId": 5494, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5495": {
+    "controlId": 5495, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5496": {
+    "controlId": 5496, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5497": {
+    "controlId": 5497, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5500": {
+    "controlId": 5500, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5501": {
+    "controlId": 5501, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5502": {
+    "controlId": 5502, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5504": {
+    "controlId": 5504, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5505": {
+    "controlId": 5505, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5506": {
+    "controlId": 5506, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5507": {
+    "controlId": 5507, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5508": {
+    "controlId": 5508, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5509": {
+    "controlId": 5509, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5510": {
+    "controlId": 5510, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5511": {
+    "controlId": 5511, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5512": {
+    "controlId": 5512, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5513": {
+    "controlId": 5513, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5514": {
+    "controlId": 5514, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5729": {
+    "controlId": 5729, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5730": {
+    "controlId": 5730, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5731": {
+    "controlId": 5731, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5732": {
+    "controlId": 5732, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5733": {
+    "controlId": 5733, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5734": {
+    "controlId": 5734, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5735": {
+    "controlId": 5735, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5736": {
+    "controlId": 5736, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5737": {
+    "controlId": 5737, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5738": {
+    "controlId": 5738, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5739": {
+    "controlId": 5739, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5740": {
+    "controlId": 5740, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5741": {
+    "controlId": 5741, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5742": {
+    "controlId": 5742, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5743": {
+    "controlId": 5743, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5744": {
+    "controlId": 5744, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5745": {
+    "controlId": 5745, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5746": {
+    "controlId": 5746, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5747": {
+    "controlId": 5747, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5748": {
+    "controlId": 5748, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5749": {
+    "controlId": 5749, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5750": {
+    "controlId": 5750, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5751": {
+    "controlId": 5751, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5752": {
+    "controlId": 5752, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5753": {
+    "controlId": 5753, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5754": {
+    "controlId": 5754, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5755": {
+    "controlId": 5755, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5756": {
+    "controlId": 5756, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5757": {
+    "controlId": 5757, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5758": {
+    "controlId": 5758, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5759": {
+    "controlId": 5759, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5760": {
+    "controlId": 5760, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5761": {
+    "controlId": 5761, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5762": {
+    "controlId": 5762, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5402": {
+    "controlId": 5402, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "5851": {
+    "controlId": 5851, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5852": {
+    "controlId": 5852, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5853": {
+    "controlId": 5853, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5854": {
+    "controlId": 5854, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5855": {
+    "controlId": 5855, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5856": {
+    "controlId": 5856, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5857": {
+    "controlId": 5857, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5858": {
+    "controlId": 5858, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5859": {
+    "controlId": 5859, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5860": {
+    "controlId": 5860, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5861": {
+    "controlId": 5861, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5862": {
+    "controlId": 5862, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5863": {
+    "controlId": 5863, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5864": {
+    "controlId": 5864, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5865": {
+    "controlId": 5865, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5866": {
+    "controlId": 5866, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5867": {
+    "controlId": 5867, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5868": {
+    "controlId": 5868, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5869": {
+    "controlId": 5869, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5870": {
+    "controlId": 5870, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5871": {
+    "controlId": 5871, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5872": {
+    "controlId": 5872, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5873": {
+    "controlId": 5873, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5874": {
+    "controlId": 5874, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5875": {
+    "controlId": 5875, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5876": {
+    "controlId": 5876, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5877": {
+    "controlId": 5877, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5878": {
+    "controlId": 5878, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5879": {
+    "controlId": 5879, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5880": {
+    "controlId": 5880, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5881": {
+    "controlId": 5881, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5882": {
+    "controlId": 5882, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5883": {
+    "controlId": 5883, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "5884": {
+    "controlId": 5884, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "1820": {
+    "controlId": 1820, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "1821": {
+    "controlId": 1821, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "1822": {
+    "controlId": 1822, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "1823": {
+    "controlId": 1823, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "1824": {
+    "controlId": 1824, 
+    "widget": "switch", 
+    "options": {}
+  }, 
+  "1825": {
+    "controlId": 1825, 
+    "widget": "switch", 
+    "options": {
+      "labels": {
+        "onLabel": "Open", 
+        "offLabel": "Closed"
+      }
+    }
+  }, 
+  "1878": {
+    "controlId": 1878, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "1880": {
+    "controlId": 1880, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "1882": {
+    "controlId": 1882, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "6965": {
+    "controlId": 6965, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4061": {
+    "controlId": 4061, 
+    "widget": "button", 
+    "options": {
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
+    }
+  }, 
+  "4062": {
+    "controlId": 4062, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4063": {
+    "controlId": 4063, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4064": {
+    "controlId": 4064, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4065": {
+    "controlId": 4065, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4066": {
+    "controlId": 4066, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4067": {
+    "controlId": 4067, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4068": {
+    "controlId": 4068, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4069": {
+    "controlId": 4069, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4070": {
+    "controlId": 4070, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4071": {
+    "controlId": 4071, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4072": {
+    "controlId": 4072, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4073": {
+    "controlId": 4073, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4074": {
+    "controlId": 4074, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4075": {
+    "controlId": 4075, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4076": {
+    "controlId": 4076, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4077": {
+    "controlId": 4077, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4078": {
+    "controlId": 4078, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4079": {
+    "controlId": 4079, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4080": {
+    "controlId": 4080, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4081": {
+    "controlId": 4081, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4082": {
+    "controlId": 4082, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4083": {
+    "controlId": 4083, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4084": {
+    "controlId": 4084, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4085": {
+    "controlId": 4085, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4086": {
+    "controlId": 4086, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4087": {
+    "controlId": 4087, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4088": {
+    "controlId": 4088, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4089": {
+    "controlId": 4089, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4090": {
+    "controlId": 4090, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4091": {
+    "controlId": 4091, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4092": {
+    "controlId": 4092, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4093": {
+    "controlId": 4093, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4094": {
+    "controlId": 4094, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }, 
+  "4095": {
+    "controlId": 4095, 
+    "widget": "button", 
+    "options": {
+      "type": "momentary"
+    }
+  }
+}

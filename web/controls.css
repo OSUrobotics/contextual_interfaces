@@ -1,12 +1,101 @@
+body {
+	font-family: helvetica;
+}
+
 div.control {
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 	padding: 1em;
 	clear: none;
 	display: inline-block;
 	text-align: center;
+	line-height: 0;
 }
 
 div.control button {
-	padding: 4em;
+	/*padding: 4em;*/
 	font-size: large;
+	text-align: middle;
+}
+
+#main {
+	height: 100%;
+	width: 74%;
+	float: left;
+}
+
+/* Location selector */
+nav#location-selector {
+	float: right;
+	height: 100%;
+	width: 25%;
+	border-left: 1px solid gray;
+}
+
+nav#location-selector h1 {
+	text-align: center;
+	font-size: large;
+}
+
+nav#location-selector h2 {
+	text-align: center;
+	font-size: small;
+}
+
+select#locations {
+	font-size: large;
+	overflow: hidden;
+	position: relative;
+	/*height: 100%;*/
+	border: none;
+	border-top: 1px solid gray;
+
+}
+
+select#locations option {
+	padding: 1em;
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	margin-top: -1px;
+}
+
+div.jqx-switchbutton, div.horizontal-button {
+	clear: none;
+	display: inline-block;
+}
+
+div.horizontal-button {
+	margin: 0 0.5em 0 0.5em;
+}
+
+fieldset h2 {
+	text-align: center;
+	font-size: medium;
+}
+
+fieldset legend {
+	font-size: large;
+	font-weight: bold;
+}
+
+div#Light {
+	clear: left;
+	display: inline-block;
+
+}
+div#Door {
+	clear: right;
+	display: inline-block;
+}
+
+@font-face {
+	font-family: symbola;
+	src: url(scripts/Symbola.ttf);
+}
+.symbol {
+	font-family: symbola;
+	font-size: xx-large;
+}
+
+img {
+    max-width:100%;
 }

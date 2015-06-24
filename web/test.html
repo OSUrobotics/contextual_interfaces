@@ -1,0 +1,266 @@
+<html>
+  <head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <script src="eventemitter2.min.js"></script>
+    <script src="roslib.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="controls.css">
+    <link rel="stylesheet" type="text/css" href="accordion.css">
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="scripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+    <!-- <link rel="stylesheet" href="scripts/jquery.onoff.css"> -->
+    <!-- // <script src="scripts/jquery.onoff.min.js" type="text/javascript"></script> -->
+
+    <link rel="stylesheet" href="scripts/jqwidgets/styles/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="scripts/jqwidgets/styles/jqx.classic.css" type="text/css" />
+    <script type="text/javascript" src="scripts/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxswitchbutton.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxbuttons.js"></script>
+
+
+    <script src="scripts/widgets.js"></script>
+    <script src="scripts/peac.js"></script>
+    <script src="scripts/monitor.js"></script>
+
+    <script>
+
+var controlData;
+var mutexDevices;
+
+$(document).ready(function() {
+    mst = new MovementStartTrigger(function() {
+        msg = {
+            caption: 'MOVEMENT_START',
+            interface: 'WEB_CONTEXT'
+        }
+        actuatedClient.callService(new ROSLIB.ServiceRequest({
+            actuation: msg
+        }), function(resp){})
+    })
+    $('body').click(mst.reset)
+
+
+    $.getJSON('data/controls.json', function(data) {
+        controlData = data
+    })
+    $.getJSON('data/mutex.json', function(data) {
+        mutexDevices = data
+    })
+
+})
+
+
+var ros = new ROSLIB.Ros({
+    url : 'ws://localhost:9090'
+    // url : 'ws://192.168.0.12:9090'
+});
+ros.socket.onclose = function(obj) {
+    console.log('Connection closed')
+    console.log(obj)
+}
+
+// heartbeatListen(ros)
+
+ros.on('connection', function() {
+    console.log('Connected to websocket server.');
+});
+var transitionListener = new ROSLIB.Topic({
+    ros: ros,
+    name: '/transition',
+    messageType: 'privacy_zones/Transition'
+});
+
+var getControlsClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/get_devices_in_zone',
+    serviceType: 'privacy_zones/DevicesInZone'
+});
+
+var updateControlClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/peac/update_control',
+    serviceType: 'peac_bridge/UpdateControl'
+});
+
+var listLocationsClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/get_zone_locations',
+    serviceType: 'privacy_zones/GetZoneLocations'
+})
+
+var zoneLocalizationClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/localize_in_zone',
+    serviceType: 'privacy_zones/LocalizeInZone'
+})
+
+var actuatedClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/actuation_logging_server/report_control_actuated',
+    serviceType: 'peac_bridge/ReportControlActuation'
+})
+
+var updateDeviceClient = new ROSLIB.Service({
+    ros: ros,
+    name: '/peac/get_device_info',
+    serviceType: 'peac_bridge/get_device_info'
+})
+
+function wait(cond, action) {
+    if(typeof(action)==='undefined') action = function() {}
+    if (!cond()) {
+        setTimeout(function () {
+            return wait(cond, action)
+        }, 100)
+        console.log('WAITING')
+    } else {
+        console.log('DONE')
+        return action()
+    }
+}
+
+var last_zone = ''
+var devicesIds = [];
+var devices
+
+transitionListener.subscribe(function(msg) {
+    request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 0})
+    // request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 1})
+    if(msg.action==1) { //enter
+        console.log("Entered " + msg.zone.name)
+        last_zone = msg.zone.name
+
+        // get all the controls in this zone and add them
+        getControlsClient.callService(request, function(resp) {
+            devices = organizeByDevice(resp.controls)
+            deviceIds = Object.keys(devices)
+            specialDevices = mergeByType(devices, ['Door', 'Light'])
+            mutexGroups = mergeMutex(devices, mutexDevices)
+
+            for(var deviceId in specialDevices) {
+                if(specialDevices[deviceId].length > 0) {
+                    $("#"+deviceId).device({
+                        device: {
+                            name: deviceId + 's'
+                        },
+                        controls: specialDevices[deviceId],
+                        controlData: controlData
+                    })
+                    if(specialDevices[deviceId].length > 0)
+                        $("#"+deviceId).show()
+                }
+            }
+
+            mutexGroups.forEach(function(group) {
+                $('<div>').appendTo('#main').device_mutex({
+                    devices: group
+                })
+            })
+
+            for(var deviceId in devices) {
+                $('<div>').appendTo('#main').device({
+                    device: devices[deviceId][0].device,
+                    controls: devices[deviceId],
+                    controlData: controlData
+                })
+            }
+
+            // devices.forEach(function(device) {
+            //     console.log(device)
+            // })
+            // $(resp.controls).each(function() {
+            //     controlbox = makeControl(this);
+            //     $("#main").append(controlBox);
+            // })
+        })
+
+        // update the location select box
+        msg.peac_locations.forEach(function(loc) {
+            $('#locations > option[value='+loc.locationId+']').attr('selected', 'selected')
+        })
+
+    } else { //exit
+        console.log("Exited " + msg.zone.name)
+        // elem = $(".control[id^="+msg.zone.name+"ZaZa]");
+        elem = $('.device[zone]')
+
+        msg.peac_locations.forEach(function(loc) {
+            $('#locations > option[value='+loc.locationId+']').removeAttr('selected')
+        })
+
+        // don't remove controls that the use is hovering over
+        if(!elem.data('hover')) {
+            if(elem.attr('id')=='Light' || elem.attr('id')=='Door')
+                elem.hide()
+            else
+                elem.remove();
+        }
+        else {
+            // instead, wait until they're done
+            elem.bind('mouseleave.leftover', function() {
+                $(this).remove();
+            })
+        }
+    }
+
+    // now bind the monitor listeners
+    $('.control').click(function() {
+        console.log(this)
+    })
+
+})
+
+listLocationsClient.callService({}, function(resp) {
+    for(var i=0; i<resp.locations.length; i++) {
+        loc = resp.locations[i]
+        zone = resp.zones[i]
+        opt = $('<option>')
+        opt.text(loc.name)
+        opt.val(loc.locationId)
+        opt.attr('zone', zone.name)
+        if(last_zone==zone.name) opt.attr('selected', 'selected')
+        $("#locations").prepend(opt)
+    }
+    $("#locations").change(function(evt) {
+        $("#locations option:selected").each(function() {
+            console.log($(this).attr('zone'))
+            zoneLocalizationClient.callService({zone: $(this).attr('zone')}, function(resp){})
+            msg = {
+                caption: 'ZONE_LOCALIZE: ' + $(this).attr('zone'),
+                interface: 'WEB_CONTEXT'
+            }
+            actuatedClient.callService(new ROSLIB.ServiceRequest({
+                actuation: msg
+            }), function(resp){})
+        })
+    })
+})
+
+pollInteval = setInterval(function() {
+    if(typeof(deviceIds) != 'undefined') {
+        pollPeac(deviceIds, updateDeviceClient)
+    }
+}, 5000)
+
+
+</script>
+
+<body>
+<section id="main">
+<div id="Light"></div>
+<div id="Door"></div>
+</section>
+<nav id="location-selector">
+    <h1>Current Location</h1>
+    <h2>(click to fix if incorrect)</h2>
+    <select id="locations" multiple>
+        <option zone="NONE">Somewhere Else</option>
+    </select>
+</nav>
+
+<!-- <div class="control" style="display:none" id="controlTemplate">
+<h2>CONTROL NAME</h2>
+<button>ON/OFF</button>
+</div>
+ -->
+</body>
+</html>
