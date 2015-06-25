@@ -59,6 +59,7 @@ $.widget("peac.device", {
 $.widget("peac.device_mutex", $.peac.device, {
     _create: function() {
         var devices = this.options.devices;
+        if(Object.keys(devices).length == 0) return
         var acc = $('<ul>')
             .addClass('accordion')
         Object.keys(devices).forEach(function(deviceId) {
