@@ -78,8 +78,6 @@ $.widget("peac.device_mutex", $.peac.device, {
 
         activeItem = acc.children('li:first')
         activeItem.width(width)
-        console.log(width)
-        console.log(acc.children('li'))
         acc.children('li').click(function() {
             $(activeItem).animate({width: "99px"}, {duration:300, queue:false});
             $(this).animate({width: width + "px"}, {duration:300, queue:false});
@@ -147,6 +145,11 @@ $.widget("peac.accordion_section", $.peac.device, {
 })
 
 $.widget("peac.control", {
+    options: {
+        numValTransformer: function(numVal) {
+            return Number(!Number(numVal))
+        }
+    },
     _create: function() {
         this.ignoreEvents = false
         this.ignoreUpdates = false
@@ -158,10 +161,11 @@ $.widget("peac.control", {
             .on('peacUpdate', $.proxy(this._setNumVal, this))
             .hover($.proxy(this._hover, this))
     },
+
     _click_callback: function() {
         var wid = this
         if(!this.ignoreEvents) {
-            var newNumVal = Number(!Number(wid.options.control.numVal))
+            var newNumVal = wid.options.numValTransformer(wid.options.control.numVal)
 
             req = new ROSLIB.ServiceRequest({
                 controlId: wid.options.control.controlId,
@@ -175,7 +179,7 @@ $.widget("peac.control", {
                 actuation: {
                     control: {
                         controlId: wid.options.control.controlId,
-                        numVal: wid.options.control.numVal,
+                        numVal: newNumVal,
                         name: wid.options.control.name
                     },
                     device: wid.options.control.device,
@@ -188,7 +192,7 @@ $.widget("peac.control", {
         }
     },
     _setNumVal: function(numVal) {
-        console.log('Not implemented')
+        // console.log('Not implemented')
     },
     _hover: function() {
         console.log('deviceId: ' + this.options.control.device.deviceId, 'controlId: ' + this.options.control.controlId)
@@ -224,7 +228,7 @@ $.widget("peac.button", $.peac.control, {
         button.click($.proxy(this._click_callback, this))
 
     },
-    _setNumVal: function(numVal) {
+    _setNumVal: function(event, numVal) {
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
 
@@ -302,6 +306,7 @@ $.widget("peac.infoDisplay", $.peac.control, {
         this._super('_create')
         this.element
             .text(this._makeText(this.options.control.numVal))
+            .addClass('infoDisplay')
     },
     _makeText: function(text) {
         return this.options.textPre + text + this.options.textPost
@@ -319,4 +324,135 @@ $.widget("peac.infoDisplay", $.peac.control, {
         }
     }
 
+})
+
+$.widget("peac.numericRocker", $.peac.control, {
+    options: {
+        textPre: '',
+        textPost: '',
+        orientation: 'horizontal'
+    },
+    _create: function() {
+        this._super('_create')
+
+        var name = this.options.control.name
+        if(this.options.hasOwnProperty('display_name')) {
+            name = this.options.display_name
+        }
+
+        var label = $('<div>')
+            .addClass('label')
+            .text(name)
+
+
+        var incrButton = $('<div>').button({
+            control: this.options.control,
+            display_name: '<span class="symbol">&#9650;</span>',
+            numValTransformer: function(numVal) {
+                return Number(numVal) + 1
+            }
+        })
+
+        var decrButton = $('<div>').button({
+            control: this.options.control,
+            display_name: '<span class="symbol">&#9660;</span>',
+            numValTransformer: function(numVal) {
+                return Number(numVal) - 1
+            }
+        })
+
+        var valueDisplay = $('<div>').infoDisplay(this.options)
+
+        this.element
+            .append(label)
+            .append(incrButton)
+            .append(valueDisplay)
+            .append(decrButton)
+            .addClass('rocker')
+    }
+})
+
+$.widget("peac.buttonGroup", $.peac.control, {
+    _create: function() {
+        this._super('_create')
+        var name = this.options.control.name
+        if(this.options.hasOwnProperty('display_name')) {
+            name = this.options.display_name
+        }
+
+        var label = $('<div>')
+            .addClass('label')
+            .text(name)
+
+        this.element
+            .addClass('buttongroup')
+            .append(label)
+
+        this.values = {}
+        this.buttonGroup = $('<div>')
+        this.options.values.forEach($.proxy(function(value) {
+            var button = $('<button>')
+                .text(value.caption)
+                this.values[value.caption] = value.value
+            this.buttonGroup.append(button)
+        }, this))
+
+
+        this.buttonGroup
+            .jqxButtonGroup({mode: 'radio'})
+            .on('buttonclick', $.proxy(this._buttonclickCallback, this))
+
+        console.log(this.element.find('.jqxButtonGroup'))
+
+
+
+        this.element
+            .append(this.buttonGroup)
+            .find('.jqx-button')
+            .addClass('control')
+            // .width('1em')
+            .height('1em')
+    },
+    _buttonclickCallback: function(event) {
+        console.log(this.options.control.numVal)
+        if(!this.ignoreEvents) {
+            var newNumVal = Number(this.values[event.args.button.text()])
+
+            req = new ROSLIB.ServiceRequest({
+                controlId: this.options.control.controlId,
+                numVal: newNumVal
+            });
+            
+            updateControlClient.callService(req, $.proxy(function(resp){
+                this.options.control.numVal = resp.control.numVal
+            }, this));
+            actuatedClient.callService(new ROSLIB.ServiceRequest({
+                actuation: {
+                    control: {
+                        controlId: this.options.control.controlId,
+                        numVal: newNumVal,
+                        name: this.options.control.name
+                    },
+                    device: this.options.control.device,
+                    caption: this.options.control.name,
+                    interface: 'WEB_CONTEXT'
+                }
+            }), function(resp){
+                
+            })
+        }
+    },
+    _setNumVal: function(event, numVal) {
+        if(!this.ignoreUpdates) {
+            this.ignoreEvents = true
+            if(this.options.control.numVal != numVal) {
+                this.options.control.numVal = numVal
+                this.buttonGroup.jqxButtonGroup('setSelection', Number(numVal)-1)
+            }
+            setTimeout($.proxy(function() {
+                this.ignoreEvents = false
+            }, this), 500)
+        }
+
+    },
 })

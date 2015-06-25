@@ -9,13 +9,16 @@ div.control {
 	display: inline-block;
 	text-align: center;
 	line-height: 0;
+	vertical-align: middle;
 }
 
-div.control button {
+div.control button, div.control, .jqx-button {
 	/*padding: 4em;*/
 	font-size: large;
-	text-align: middle;
+	vertical-align: middle;
 }
+
+
 
 #main {
 	height: 100%;
@@ -98,4 +101,28 @@ div#Door {
 
 img {
     max-width:100%;
+}
+
+.rocker .control {
+	padding: 0;
+}
+
+.rocker .infoDisplay {
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+
+	padding-top: 1em;
+	border-top: 1px solid gray;
+
+	padding-bottom: 0.75em;
+	border-bottom: 1px solid gray;
+
+}
+
+.rocker div.label {
+	margin-bottom: 0.65em;
+}
+
+.buttongroup div.label {
+	margin-bottom: 0.65em;
 }
