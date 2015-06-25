@@ -126,3 +126,32 @@ img {
 .buttongroup div.label {
 	margin-bottom: 0.65em;
 }
+
+.jqx-fill-state-pressed {
+	background-color: #666;
+}
+
+.rot180 {
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	display: block;
+}
+
+.rot90 {
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	display: block;
+}
+
+.rot270 {
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	transform: rotate(270deg);
+	display: block;
+}
+
+.red {
+	color: red;
+}
