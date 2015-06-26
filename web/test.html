@@ -138,8 +138,6 @@ transitionListener.subscribe(function(msg) {
             specialDevices = mergeByType(devices, ['Door', 'Light'])
             mutexGroups = mergeMutex(devices, mutexDevices)
 
-            console.log(specialDevices)
-            console.log('-----')
             for(var deviceId in specialDevices) {
                 if(specialDevices[deviceId].length > 0) {
                     $("#"+deviceId).device({
@@ -193,7 +191,7 @@ transitionListener.subscribe(function(msg) {
             if(!$(this).data('hover')) {
                 console.log()
                 if($(this).attr('id')=='Light' || $(this).attr('id')=='Door') {
-                    $(this).device('clear')
+                    $(this).device('destroy')
                     $(this).hide()
                 } else
                     $(this).remove();

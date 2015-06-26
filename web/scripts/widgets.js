@@ -44,7 +44,6 @@ $.widget("peac.device", {
             .attr('deviceId', device.deviceId)
             .addClass('device')
 
-
         var widgets = []
         controls.forEach(function(control) {
             widget = controlData[control.controlId]['widget']
@@ -55,11 +54,17 @@ $.widget("peac.device", {
             widgets.push(controlWid)
         })
         this.widgets = widgets
+        this.fs = fs
     },
-    clear: function() {
+    _destroy: function() {
         this.widgets.forEach(function(widget) {
             widget.remove()
-        }) 
+        })
+        this.fs.remove()
+        this.element.removeClass('device')
+        this.element.removeAttr('deviceId')
+        this.element.removeAttr('zone')
+        this._super('destroy')
     }
 })
 
