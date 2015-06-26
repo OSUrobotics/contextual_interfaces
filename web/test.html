@@ -3,7 +3,6 @@
     <meta content="text/html; charset=windows-1252" http-equiv="content-type">
     <script src="eventemitter2.min.js"></script>
     <script src="roslib.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="controls.css">
     <link rel="stylesheet" type="text/css" href="accordion.css">
     <script src="jquery-1.11.1.min.js"></script>
     <script src="scripts/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -22,6 +21,7 @@
     <script src="scripts/peac.js"></script>
     <script src="scripts/monitor.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="controls.css">
     <script>
 
 var controlData;
@@ -138,6 +138,8 @@ transitionListener.subscribe(function(msg) {
             specialDevices = mergeByType(devices, ['Door', 'Light'])
             mutexGroups = mergeMutex(devices, mutexDevices)
 
+            console.log(specialDevices)
+            console.log('-----')
             for(var deviceId in specialDevices) {
                 if(specialDevices[deviceId].length > 0) {
                     $("#"+deviceId).device({
@@ -146,9 +148,7 @@ transitionListener.subscribe(function(msg) {
                         },
                         controls: specialDevices[deviceId],
                         controlData: controlData
-                    })
-                    if(specialDevices[deviceId].length > 0)
-                        $("#"+deviceId).show()
+                    }).show()
                 }
             }
 
@@ -182,26 +182,29 @@ transitionListener.subscribe(function(msg) {
 
     } else { //exit
         console.log("Exited " + msg.zone.name)
-        // elem = $(".control[id^="+msg.zone.name+"ZaZa]");
-        elem = $('.device[zone]')
 
         msg.peac_locations.forEach(function(loc) {
             $('#locations > option[value='+loc.locationId+']').removeAttr('selected')
         })
 
-        // don't remove controls that the use is hovering over
-        if(!elem.data('hover')) {
-            if(elem.attr('id')=='Light' || elem.attr('id')=='Door')
-                elem.hide()
-            else
-                elem.remove();
-        }
-        else {
-            // instead, wait until they're done
-            elem.bind('mouseleave.leftover', function() {
-                $(this).remove();
-            })
-        }
+        elem = $('.device[zone]')
+        elem.each(function() {
+            // don't remove controls that the use is hovering over
+            if(!$(this).data('hover')) {
+                console.log()
+                if($(this).attr('id')=='Light' || $(this).attr('id')=='Door') {
+                    $(this).device('clear')
+                    $(this).hide()
+                } else
+                    $(this).remove();
+            }
+            else {
+                // instead, wait until they're done
+                $(this).bind('mouseleave.leftover', function() {
+                    $(this).remove();
+                })
+            }
+        })
     }
 
     // now bind the monitor listeners

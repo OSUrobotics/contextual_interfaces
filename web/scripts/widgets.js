@@ -35,7 +35,6 @@ $.widget("peac.device", {
         var label = $('<'+this.options.label+'>'+device.name+'<'+this.options.label+'>')
         var fs = $('<'+this.options.container+'>').attr('name', device.name)
             .append(label)
-
         this.options.fs = fs
         this.options.label = label
 
@@ -45,14 +44,22 @@ $.widget("peac.device", {
             .attr('deviceId', device.deviceId)
             .addClass('device')
 
+
+        var widgets = []
         controls.forEach(function(control) {
             widget = controlData[control.controlId]['widget']
             opts = {control: control}
             $.extend(opts, controlData[control.controlId]['options'])
             controlWid = $('<div>')[widget](opts)
             controlWid.appendTo(fs)
-
+            widgets.push(controlWid)
         })
+        this.widgets = widgets
+    },
+    clear: function() {
+        this.widgets.forEach(function(widget) {
+            widget.remove()
+        }) 
     }
 })
 
@@ -72,7 +79,6 @@ $.widget("peac.device_mutex", $.peac.device, {
             .append(acc)
             .attr('zone', devices[Object.keys(devices)[0]][0].zone)
             .addClass('device')
-        console.log(this.element)
         total_width = this.element.width()
 
         tabs = acc.children('li')
@@ -405,10 +411,6 @@ $.widget("peac.buttonGroup", $.peac.control, {
         this.buttonGroup
             .jqxButtonGroup({mode: 'radio'})
             .on('buttonclick', $.proxy(this._buttonclickCallback, this))
-
-        console.log(this.element.find('.jqxButtonGroup'))
-
-
 
         this.element
             .append(this.buttonGroup)
