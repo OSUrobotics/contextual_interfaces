@@ -10,6 +10,7 @@ div.control {
 	text-align: center;
 	line-height: 0;
 	vertical-align: middle;
+	overflow: hidden;
 }
 
 div.control button, div.control, .jqx-button {
@@ -154,4 +155,10 @@ img {
 
 .red {
 	color: red;
+}
+
+.square {
+	width: 3.5em;
+	height: 3.5em;
+	overflow: hidden;
 }

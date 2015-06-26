@@ -222,8 +222,7 @@ $.widget("peac.button", $.peac.control, {
             .append(button)
 
         if(this.options.square) {
-            button.width('3em')
-            button.height('3em')
+            button.addClass('square')
         }
 
         button.click($.proxy(this._click_callback, this))
