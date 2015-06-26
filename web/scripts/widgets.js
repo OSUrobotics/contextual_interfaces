@@ -72,15 +72,19 @@ $.widget("peac.device_mutex", $.peac.device, {
             .append(acc)
             .attr('zone', devices[Object.keys(devices)[0]][0].zone)
             .addClass('device')
-
+        console.log(this.element)
         total_width = this.element.width()
-        tab_width = acc.children('li').width() * acc.children('li').length
+
+        tabs = acc.children('li')
+        single_tab_width = tabs.width()
+        // tab_width = single_tab_width * (tabs.length)
+        tab_width = single_tab_width * (tabs.length-1) + 17
         width = total_width - tab_width
 
         activeItem = acc.children('li:first')
         activeItem.width(width)
         acc.children('li').click(function() {
-            $(activeItem).animate({width: "99px"}, {duration:300, queue:false});
+            $(activeItem).animate({width: single_tab_width}, {duration:300, queue:false});
             $(this).animate({width: width + "px"}, {duration:300, queue:false});
             activeItem = this;
         })
