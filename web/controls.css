@@ -71,6 +71,10 @@ div.horizontal-button {
 	margin: 0 0.5em 0 0.5em;
 }
 
+fieldset {
+	border: 1px solid gray;
+}
+
 fieldset h2 {
 	text-align: center;
 	font-size: medium;
