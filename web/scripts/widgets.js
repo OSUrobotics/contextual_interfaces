@@ -189,6 +189,7 @@ $.widget("peac.control", {
             });
             
             updateControlClient.callService(req, function(resp){
+                console.log(resp.control.numVal)
                 wid.options.control.numVal = resp.control.numVal
             });
             actuatedClient.callService(new ROSLIB.ServiceRequest({
@@ -239,16 +240,20 @@ $.widget("peac.button", $.peac.control, {
         if(this.options.square) {
             button.addClass('square')
         }
-
+        this.button = button
         button.click($.proxy(this._click_callback, this))
 
     },
     _setNumVal: function(event, numVal) {
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
-
-            // business logic here
-
+            if((this.options.type=="toggle") && this.options.control.numVal != numVal) { 
+                this.options.control.numVal = numVal
+                if(numVal==0)
+                    this.button.jqxToggleButton('unCheck')
+                else
+                    this.button.jqxToggleButton('check')                    
+            }
             setTimeout($.proxy(function() {
                 this.ignoreEvents = false
             }, this), 500)
@@ -425,10 +430,8 @@ $.widget("peac.buttonGroup", $.peac.control, {
             .height('1em')
     },
     _buttonclickCallback: function(event) {
-        console.log(this.options.control.numVal)
         if(!this.ignoreEvents) {
             var newNumVal = Number(this.values[event.args.button.text()])
-
             req = new ROSLIB.ServiceRequest({
                 controlId: this.options.control.controlId,
                 numVal: newNumVal
