@@ -15,6 +15,9 @@
     <script type="text/javascript" src="scripts/jqwidgets/jqxswitchbutton.js"></script>
     <script type="text/javascript" src="scripts/jqwidgets/jqxbuttons.js"></script>
     <script type="text/javascript" src="scripts/jqwidgets/jqxbuttongroup.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxdata.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxlistbox.js"></script>
 
 
     <script src="scripts/widgets.js"></script>
@@ -26,6 +29,7 @@
 
 var controlData;
 var mutexDevices;
+var locationReady = false;
 
 $(document).ready(function() {
     mst = new MovementStartTrigger(function() {
@@ -47,6 +51,15 @@ $(document).ready(function() {
     $.getJSON('data/mutex.json', function(data) {
         mutexDevices = data
     })
+
+    $("#locations").jqxListBox({
+        width: "100%",
+        height: "100%",
+        // multiple: true,
+        itemHeight: 50
+    })
+    updateLocationBox()
+    // transitionListener.subscribe(transitionCallback)
 
 })
 
@@ -124,7 +137,7 @@ var last_zone = ''
 var devicesIds = [];
 var devices
 
-transitionListener.subscribe(function(msg) {
+function transitionCallback(msg) {
     request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 0})
     // request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 1})
     if(msg.action==1) { //enter
@@ -174,8 +187,15 @@ transitionListener.subscribe(function(msg) {
         })
 
         // update the location select box
+        var locationItems = $('#locations').jqxListBox('getItems')
         msg.peac_locations.forEach(function(loc) {
-            $('#locations > option[value='+loc.locationId+']').attr('selected', 'selected')
+            // $('#locations > option[value='+loc.locationId+']').attr('selected', 'selected')
+            // $('#locations').jqxListBox()
+            for(var i=0; i<locationItems.length; i++) {
+                if(locationItems[i].value.loc.locationId==loc.locationId) {
+                    $('#locations').jqxListBox('selectIndex', i)
+                }
+            }
         })
 
     } else { //exit
@@ -209,34 +229,43 @@ transitionListener.subscribe(function(msg) {
     $('.control').click(function() {
         console.log(this)
     })
+}
 
-})
+function updateLocationBox() {
+    listLocationsClient.callService({}, function(resp) {
+        var selected = -1
+        for(var i=0; i<resp.locations.length; i++) {
+            loc = resp.locations[i]
+            zone = resp.zones[i]
+            console.log(zone.name + " " + (last_zone==zone.name))
+            $("#locations").jqxListBox('addItem', {
+                label: loc.name,
+                value: {zone: zone, loc: loc}
+            })
+            if(last_zone==zone.name) selected = i
+        }
+        $("#locations").jqxListBox('addItem', {
+            label: "Somewhere Else",
+            value: {zone: {name: "NONE"}, loc: {locationId: -1}}
+        })
+        $("#locations").jqxListBox('selectIndex', selected)
 
-listLocationsClient.callService({}, function(resp) {
-    for(var i=0; i<resp.locations.length; i++) {
-        loc = resp.locations[i]
-        zone = resp.zones[i]
-        opt = $('<option>')
-        opt.text(loc.name)
-        opt.val(loc.locationId)
-        opt.attr('zone', zone.name)
-        if(last_zone==zone.name) opt.attr('selected', 'selected')
-        $("#locations").prepend(opt)
-    }
-    $("#locations").change(function(evt) {
-        $("#locations option:selected").each(function() {
-            console.log($(this).attr('zone'))
-            zoneLocalizationClient.callService({zone: $(this).attr('zone')}, function(resp){})
+        $("#locations").on('select', function(evt) {
+            zone = evt.args.item.value.zone
+            console.log(zone.name)
+            zoneLocalizationClient.callService({zone: zone.name}, function(resp){})
             msg = {
-                caption: 'ZONE_LOCALIZE: ' + $(this).attr('zone'),
+                caption: 'ZONE_LOCALIZE: ' + zone.name,
                 interface: 'WEB_CONTEXT'
             }
             actuatedClient.callService(new ROSLIB.ServiceRequest({
                 actuation: msg
             }), function(resp){})
         })
+        locationReady = true
+        transitionListener.subscribe(transitionCallback)
     })
-})
+}
 
 pollInteval = setInterval(function() {
     if(typeof(deviceIds) != 'undefined') {
@@ -255,9 +284,7 @@ pollInteval = setInterval(function() {
 <nav id="location-selector">
     <h1>Current Location</h1>
     <h2>(click to fix if incorrect)</h2>
-    <select id="locations" multiple>
-        <option zone="NONE">Somewhere Else</option>
-    </select>
+    <div id="locations"></div>
 </nav>
 
 <!-- <div class="control" style="display:none" id="controlTemplate">
