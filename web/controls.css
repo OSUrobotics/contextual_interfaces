@@ -167,3 +167,12 @@ img {
 	height: 3.5em;
 	overflow: hidden;
 }
+
+#nurse-call fieldset {
+	text-align: center;
+}
+
+#control-5392 button {
+	font-size: xx-large;
+	width: 100%;
+}

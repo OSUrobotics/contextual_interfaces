@@ -31,6 +31,14 @@ var controlData;
 var mutexDevices;
 var locationReady = false;
 
+var nurse_call_device = {
+    "device":{"deviceId":1950,"name":"Nurse Call"},
+    "controlId":5392,
+    "numVal":0,
+    "name":"Nurse Call",
+    "zone":"ALL"
+}
+
 $(document).ready(function() {
     mst = new MovementStartTrigger(function() {
         msg = {
@@ -47,6 +55,13 @@ $(document).ready(function() {
 
     $.getJSON('data/controls.json', function(data) {
         controlData = data
+        call = $('<div>').device({
+            device: nurse_call_device.device,
+            controls: [nurse_call_device],
+            controlData: controlData
+        })
+        call.attr('id', 'nurse-call')
+        $('#location-selector').prepend(call)
     })
     $.getJSON('data/mutex.json', function(data) {
         mutexDevices = data
@@ -60,6 +75,7 @@ $(document).ready(function() {
     })
     updateLocationBox()
     // transitionListener.subscribe(transitionCallback)
+    console.log(controlData)
 
 })
 
@@ -170,11 +186,14 @@ function transitionCallback(msg) {
             })
 
             for(var deviceId in devices) {
-                $('<div>').appendTo('#main').device({
-                    device: devices[deviceId][0].device,
-                    controls: devices[deviceId],
-                    controlData: controlData
-                })
+                // skip the nurse call since that gets handled on its own
+                if(deviceId!=1950) {
+                    $('<div>').appendTo('#main').device({
+                        device: devices[deviceId][0].device,
+                        controls: devices[deviceId],
+                        controlData: controlData
+                    })
+                }
             }
 
             // devices.forEach(function(device) {
@@ -213,13 +232,16 @@ function transitionCallback(msg) {
                 if($(this).attr('id')=='Light' || $(this).attr('id')=='Door') {
                     $(this).device('destroy')
                     $(this).hide()
-                } else
-                    $(this).remove();
+                } else {
+                    if(Number($(this).attr('deviceid'))!=1950)
+                        $(this).remove();
+                }
             }
             else {
                 // instead, wait until they're done
                 $(this).bind('mouseleave.leftover', function() {
-                    $(this).remove();
+                    if(Number($(this).attr('deviceid'))!=1950)
+                        $(this).remove();
                 })
             }
         })
