@@ -3,6 +3,7 @@
     "controlId": 4096, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -17,6 +18,7 @@
     "controlId": 4098, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10004;</span>", 
       "type": "momentary"
     }
   }, 
@@ -73,6 +75,7 @@
     "controlId": 4106, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -80,6 +83,7 @@
     "controlId": 4107, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
       "type": "momentary"
     }
   }, 
@@ -253,7 +257,7 @@
   }, 
   "2099": {
     "controlId": 2099, 
-    "widget": "infoDisplay", 
+    "widget": "numericRocker", 
     "options": {
       "textPost": "F", 
       "textPre": ""
@@ -261,35 +265,69 @@
   }, 
   "2100": {
     "controlId": 2100, 
-    "widget": "button", 
+    "widget": "buttonGroup", 
     "options": {
-      "type": "momentary"
+      "values": [
+        {
+          "caption": "Off", 
+          "value": "1"
+        }, 
+        {
+          "caption": "Heat", 
+          "value": "2"
+        }, 
+        {
+          "caption": "Cool", 
+          "value": "3"
+        }, 
+        {
+          "caption": "Auto", 
+          "value": "4"
+        }
+      ]
     }
   }, 
   "2101": {
     "controlId": 2101, 
-    "widget": "button", 
+    "widget": "infoDisplay", 
     "options": {
-      "type": "momentary"
+      "values": {
+        "1": "Heat", 
+        "0": "HVAC Off", 
+        "2": "Cool"
+      }
     }
   }, 
   "2102": {
     "controlId": 2102, 
-    "widget": "button", 
+    "widget": "infoDisplay", 
     "options": {
       "type": "momentary"
     }
   }, 
   "2103": {
     "controlId": 2103, 
-    "widget": "button", 
+    "widget": "buttonGroup", 
     "options": {
-      "type": "momentary"
+      "values": [
+        {
+          "caption": "Auto", 
+          "value": "1"
+        }, 
+        {
+          "caption": "On", 
+          "value": "2"
+        }, 
+        {
+          "caption": "Schedule", 
+          "value": "3"
+        }
+      ]
     }
   }, 
   "2104": {
     "controlId": 2104, 
-    "widget": "infoDisplay", 
+    "widget": "numericRocker", 
     "options": {
       "textPost": "F", 
       "textPre": ""
@@ -297,7 +335,7 @@
   }, 
   "2105": {
     "controlId": 2105, 
-    "widget": "infoDisplay", 
+    "widget": "numericRocker", 
     "options": {
       "textPost": "F", 
       "textPre": ""
@@ -305,9 +343,22 @@
   }, 
   "2106": {
     "controlId": 2106, 
-    "widget": "button", 
+    "widget": "buttonGroup", 
     "options": {
-      "type": "momentary"
+      "values": [
+        {
+          "caption": "Normal", 
+          "value": "1"
+        }, 
+        {
+          "caption": "Hold", 
+          "value": "2"
+        }, 
+        {
+          "caption": "Override", 
+          "value": "3"
+        }
+      ]
     }
   }, 
   "4177": {
@@ -412,6 +463,7 @@
     "controlId": 4191, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot90\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -427,6 +479,7 @@
     "controlId": 4193, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10004;</span>", 
       "type": "momentary"
     }
   }, 
@@ -484,7 +537,8 @@
     "controlId": 4201, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
+      "type": "toggle"
     }
   }, 
   "4202": {
@@ -607,6 +661,7 @@
     "controlId": 4218, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9632;</span>", 
       "type": "momentary"
     }
   }, 
@@ -635,6 +690,7 @@
     "controlId": 4222, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9650;</span>", 
       "type": "momentary"
     }
   }, 
@@ -642,6 +698,7 @@
     "controlId": 4223, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9660;</span>", 
       "type": "momentary"
     }
   }, 
@@ -684,7 +741,8 @@
     "controlId": 4230, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
     }
   }, 
   "2209": {
@@ -1085,12 +1143,18 @@
   "4889": {
     "controlId": 4889, 
     "widget": "switch", 
-    "options": {}
+    "options": {
+      "labels": {
+        "onLabel": "Open", 
+        "offLabel": "Closed"
+      }
+    }
   }, 
   "4891": {
     "controlId": 4891, 
     "widget": "button", 
     "options": {
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
       "type": "momentary"
     }
   }, 
@@ -1098,6 +1162,7 @@
     "controlId": 4892, 
     "widget": "button", 
     "options": {
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
       "type": "momentary"
     }
   }, 
@@ -1407,6 +1472,7 @@
     "controlId": 4936, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1414,6 +1480,7 @@
     "controlId": 4937, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1701,7 +1768,8 @@
     "controlId": 5134, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
+      "type": "toggle"
     }
   }, 
   "5135": {
@@ -1743,6 +1811,7 @@
     "controlId": 5140, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9208;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1785,6 +1854,7 @@
     "controlId": 5146, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9654;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1792,13 +1862,15 @@
     "controlId": 5147, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
     }
   }, 
   "5148": {
     "controlId": 5148, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol red\">&#9679;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1806,6 +1878,7 @@
     "controlId": 5149, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1960,6 +2033,7 @@
     "controlId": 5219, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9167;</span>", 
       "type": "momentary"
     }
   }, 
@@ -1974,6 +2048,7 @@
     "controlId": 5221, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2023,6 +2098,7 @@
     "controlId": 5228, 
     "widget": "button", 
     "options": {
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
       "type": "momentary"
     }
   }, 
@@ -2044,6 +2120,7 @@
     "controlId": 5231, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9208;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2058,6 +2135,7 @@
     "controlId": 5233, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9654;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2065,7 +2143,8 @@
     "controlId": 5234, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
     }
   }, 
   "5235": {
@@ -2107,6 +2186,7 @@
     "controlId": 5240, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2142,6 +2222,7 @@
     "controlId": 5245, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9632;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2205,7 +2286,7 @@
     "controlId": 5392, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "type": "toggle"
     }
   }, 
   "3353": {
@@ -2289,6 +2370,7 @@
     "controlId": 3364, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#8630;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2326,6 +2408,7 @@
     "controlId": 3369, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot90\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2333,6 +2416,7 @@
     "controlId": 3370, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10004;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2390,6 +2474,7 @@
     "controlId": 3378, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot180\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2411,7 +2496,8 @@
     "controlId": 3381, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
+      "type": "toggle"
     }
   }, 
   "3382": {
@@ -2453,6 +2539,7 @@
     "controlId": 3387, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9208;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2503,6 +2590,7 @@
     "controlId": 3394, 
     "widget": "button", 
     "options": {
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
       "type": "momentary"
     }
   }, 
@@ -2510,6 +2598,7 @@
     "controlId": 3395, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol red\">&#9679;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2525,6 +2614,7 @@
     "controlId": 3397, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2532,6 +2622,7 @@
     "controlId": 3398, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9632;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2546,6 +2637,7 @@
     "controlId": 3400, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot270\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2553,6 +2645,7 @@
     "controlId": 3401, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9660;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2560,6 +2653,7 @@
     "controlId": 3402, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9650;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2651,6 +2745,7 @@
     "controlId": 5471, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot90\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2666,6 +2761,7 @@
     "controlId": 5473, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2687,6 +2783,7 @@
     "controlId": 5477, 
     "widget": "button", 
     "options": {
+      "display_name": "<img src=\"images/netflix.png\" alt=\"Netflix\"/>", 
       "type": "momentary"
     }
   }, 
@@ -2708,6 +2805,7 @@
     "controlId": 5480, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9208;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2715,6 +2813,7 @@
     "controlId": 5481, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9654;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2729,7 +2828,8 @@
     "controlId": 5483, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
     }
   }, 
   "5484": {
@@ -2771,6 +2871,7 @@
     "controlId": 5489, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2778,6 +2879,7 @@
     "controlId": 5490, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2785,6 +2887,7 @@
     "controlId": 5491, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9632;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2806,6 +2909,7 @@
     "controlId": 5494, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot270\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2813,6 +2917,7 @@
     "controlId": 5495, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9650;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2820,6 +2925,7 @@
     "controlId": 5496, 
     "widget": "button", 
     "options": {
+      "display_name": "Vol <span class=\"symbol\">&#9660;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2834,6 +2940,7 @@
     "controlId": 5500, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10004;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2841,6 +2948,7 @@
     "controlId": 5501, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot180\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2855,6 +2963,7 @@
     "controlId": 5504, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#8630;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2862,6 +2971,7 @@
     "controlId": 5505, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot90\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2869,6 +2979,7 @@
     "controlId": 5506, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9193;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2883,6 +2994,7 @@
     "controlId": 5508, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot180\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2897,6 +3009,7 @@
     "controlId": 5510, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9208;&#9654;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2904,6 +3017,7 @@
     "controlId": 5511, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#9194;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2911,6 +3025,7 @@
     "controlId": 5512, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2918,6 +3033,7 @@
     "controlId": 5513, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot270\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -2925,6 +3041,7 @@
     "controlId": 5514, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol\">&#10004;</span>", 
       "type": "momentary"
     }
   }, 
@@ -3484,12 +3601,13 @@
     "controlId": 4062, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/volume-mute-64x64.png\" alt=\"Mute\"/>", 
+      "type": "toggle"
     }
   }, 
   "4063": {
     "controlId": 4063, 
-    "widget": "button", 
+    "widget": "numericRocker", 
     "options": {
       "type": "momentary"
     }
@@ -3701,6 +3819,7 @@
     "controlId": 4093, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot270\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -3708,6 +3827,7 @@
     "controlId": 4094, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot90\">&#10142;</span>", 
       "type": "momentary"
     }
   }, 
@@ -3715,6 +3835,7 @@
     "controlId": 4095, 
     "widget": "button", 
     "options": {
+      "display_name": "<span class=\"symbol rot180\">&#10142;</span>", 
       "type": "momentary"
     }
   }
