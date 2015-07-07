@@ -330,6 +330,9 @@ $.widget("peac.infoDisplay", $.peac.control, {
             .addClass('infoDisplay')
     },
     _makeText: function(text) {
+        if(this.options.hasOwnProperty('values')) {
+            text = this.options.values[text]
+        }
         return this.options.textPre + text + this.options.textPost
     },
     _setNumVal: function(event, numVal) {
