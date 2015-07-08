@@ -11,6 +11,14 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
+def get_usage(controlId):
+    c = conn.cursor()
+    c.execute("SELECT count, zone_id FROM control_usage WHERE controlId = ?", (controlId,))
+    usage = {}
+    for row in c.fetchall():
+        usage[row['zone_id']] = row['count']
+    if usage: print controlId
+    return usage
 
 if __name__ == '__main__':
     conn.row_factory = dict_factory
@@ -27,5 +35,6 @@ if __name__ == '__main__':
             options['display_name'] = d['display_name']
         del d['display_name']
         d['options'] = options
+        d['usage'] = get_usage(d['controlId'])
         control_dict[d['controlId']] = d
     print json.dumps(control_dict, indent=2)
