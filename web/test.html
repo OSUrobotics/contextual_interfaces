@@ -167,6 +167,7 @@ function transitionCallback(msg) {
             specialDevices = mergeByType(devices, ['Door', 'Light'])
             mutexGroups = mergeMutex(devices, mutexDevices)
 
+            // Add special devices grouped by type, not device (doors, lights)
             for(var deviceId in specialDevices) {
                 if(specialDevices[deviceId].length > 0) {
                     $("#"+deviceId).device({
@@ -179,6 +180,7 @@ function transitionCallback(msg) {
                 }
             }
 
+            // Add mutex groups (like AV stuff)
             mutexGroups.forEach(function(group) {
                 $('<div>').appendTo('#main').device_mutex({
                     devices: group

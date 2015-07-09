@@ -31,7 +31,8 @@ $.widget("peac.device", {
     },
     _create: function() {
         var device = this.options.device;
-        var controls = this.options.controls
+        // var controls = this.options.controls
+        var controls = this._sort_controls(this.options.controls)
         var label = $('<'+this.options.label+'>'+device.name+'<'+this.options.label+'>')
         var fs = $('<'+this.options.container+'>').attr('name', device.name)
             .append(label)
@@ -65,6 +66,13 @@ $.widget("peac.device", {
         this.element.removeAttr('deviceId')
         this.element.removeAttr('zone')
         this._super('destroy')
+    },
+    _sort_controls: function(controls) {
+        return controls.sort(function(a, b) {
+            a_usage = controlData[a.controlId].usage[zone.name] || 0
+            b_usage = controlData[b.controlId].usage[zone.name] || 0
+            return b_usage - a_usage
+        })
     }
 })
 
@@ -110,7 +118,7 @@ $.widget("peac.accordion_section", $.peac.device, {
     _create: function() {
         // this._super('_create')
         var device = this.options.device;
-        var controls = this.options.controls
+        var controls = this._sort_controls(this.options.controls)
 
         var label = $('<'+this.options.label+'>'+device.name+'<'+this.options.label+'>')
             .addClass('label')
