@@ -4,8 +4,10 @@ import sqlite3
 conn = sqlite3.connect('/home/lazewatd/Dropbox/dev/wheelchair_ws/src/contextual_interfaces/data/ui-elements.db')
 c = conn.cursor()
 
-TEMP = 2099, 2104, 2105
-VOL = 4893,
+IDLESS = {
+    'Heat' : 2104,
+    'Cool' : 2105
+}
 
 
 def get_zone_id(zone):
@@ -41,6 +43,10 @@ def insert(zone, control):
     if controlId:
         zone_id = get_zone_id(zone)
         increment_count(zone, controlId)
+    elif control['caption'] in IDLESS.keys():
+        controlId = IDLESS[control['caption']]
+        increment_count(zone, controlId)
+
 
 with open('/home/lazewatd/Dropbox/research/ssalsr-maps/ssalsr_zones_collected_controls.yaml', 'r') as f:
     zc = yaml.load(f)

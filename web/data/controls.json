@@ -1,3 +1,14 @@
+1821
+1822
+1824
+2104
+2105
+4061
+4207
+4229
+4230
+4824
+5392
 {
   "4096": {
     "usage": {}, 
@@ -294,7 +305,7 @@
   "2099": {
     "usage": {}, 
     "controlId": 2099, 
-    "widget": "numericRocker", 
+    "widget": "infoDisplay", 
     "options": {
       "textPost": "F", 
       "textPre": ""
@@ -367,7 +378,9 @@
     }
   }, 
   "2104": {
-    "usage": {}, 
+    "usage": {
+      "steves": 4
+    }, 
     "controlId": 2104, 
     "widget": "numericRocker", 
     "options": {
@@ -376,7 +389,9 @@
     }
   }, 
   "2105": {
-    "usage": {}, 
+    "usage": {
+      "steves": 4
+    }, 
     "controlId": 2105, 
     "widget": "numericRocker", 
     "options": {
@@ -654,8 +669,8 @@
   }, 
   "4207": {
     "usage": {
-      "entryway": 1, 
-      "steves": 1
+      "entryway": 5, 
+      "steves": 5
     }, 
     "controlId": 4207, 
     "widget": "button", 
@@ -830,7 +845,7 @@
   }, 
   "4229": {
     "usage": {
-      "steves": 1
+      "steves": 5
     }, 
     "controlId": 4229, 
     "widget": "button", 
@@ -840,7 +855,7 @@
   }, 
   "4230": {
     "usage": {
-      "steves": 2
+      "steves": 10
     }, 
     "controlId": 4230, 
     "widget": "button", 
@@ -1222,7 +1237,7 @@
   }, 
   "4824": {
     "usage": {
-      "steves": 6
+      "steves": 30
     }, 
     "controlId": 4824, 
     "widget": "button", 
@@ -2606,7 +2621,7 @@
   }, 
   "5392": {
     "usage": {
-      "steves": 7
+      "steves": 35
     }, 
     "controlId": 5392, 
     "widget": "button", 
@@ -4030,7 +4045,7 @@
   }, 
   "1821": {
     "usage": {
-      "steves": 1
+      "steves": 5
     }, 
     "controlId": 1821, 
     "widget": "switch", 
@@ -4038,7 +4053,7 @@
   }, 
   "1822": {
     "usage": {
-      "steves": 2
+      "steves": 10
     }, 
     "controlId": 1822, 
     "widget": "switch", 
@@ -4052,7 +4067,7 @@
   }, 
   "1824": {
     "usage": {
-      "steves": 2
+      "steves": 10
     }, 
     "controlId": 1824, 
     "widget": "switch", 
@@ -4103,8 +4118,8 @@
   }, 
   "4061": {
     "usage": {
-      "entryway": 1, 
-      "steves": 1
+      "entryway": 5, 
+      "steves": 5
     }, 
     "controlId": 4061, 
     "widget": "button", 
