@@ -17,7 +17,6 @@ def get_usage(controlId):
     usage = {}
     for row in c.fetchall():
         usage[row['zone_id']] = row['count']
-    if usage: print controlId
     return usage
 
 if __name__ == '__main__':
