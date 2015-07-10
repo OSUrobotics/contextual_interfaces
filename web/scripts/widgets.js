@@ -92,6 +92,7 @@ $.widget("peac.device_mutex", $.peac.device, {
             .append(acc)
             .attr('zone', devices[Object.keys(devices)[0]][0].zone)
             .addClass('device')
+            .addClass('accordion-container')
         total_width = this.element.width()
 
         tabs = acc.children('li')

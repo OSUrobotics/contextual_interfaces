@@ -296,25 +296,20 @@ pollInteval = setInterval(function() {
         pollPeac(deviceIds, updateDeviceClient)
     }
 }, 5000)
-
-
-</script>
-
-<body>
-<section id="main">
-<div id="Light"></div>
-<div id="Door"></div>
-</section>
-<nav id="location-selector">
-    <h1>Current Location</h1>
-    <h2>(click to fix if incorrect)</h2>
-    <div id="locations"></div>
-</nav>
-
-<!-- <div class="control" style="display:none" id="controlTemplate">
-<h2>CONTROL NAME</h2>
-<button>ON/OFF</button>
-</div>
- -->
-</body>
+    </script>
+    <body>
+        <section id="main-container">
+            <section id="door-lights">
+                <div id="Light"></div>
+                <div id="Door"></div>
+            </section>
+            <section id="main">
+            </section>
+        </section>
+        <nav id="location-selector">
+            <h1>Current Location</h1>
+            <h2>(click to fix if incorrect)</h2>
+            <div id="locations"></div>
+        </nav>
+    </body>
 </html>

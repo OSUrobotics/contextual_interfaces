@@ -2,9 +2,14 @@ body {
 	font-family: helvetica;
 }
 
+div.device {
+    display: inline-block;
+    flex-grow: 1;
+}
+
 div.control {
 	/*border: 1px solid black;*/
-	padding: 1em;
+	padding: .75em;
 	clear: none;
 	display: inline-block;
 	text-align: center;
@@ -14,17 +19,20 @@ div.control {
 }
 
 div.control button, div.control, .jqx-button {
-	/*padding: 4em;*/
+	/* padding: 4em; */
 	font-size: large;
 	vertical-align: middle;
 }
 
-
-
-#main {
-	height: 100%;
+#main-container, #main, #door-lights {
 	width: 79%;
 	float: left;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#main-container #main, #main-container #door-lights {
+	width: 100%;
 }
 
 /* Location selector */
