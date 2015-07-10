@@ -176,6 +176,10 @@ img {
 	overflow: hidden;
 }
 
+#nurse-call {
+	display: block;
+}
+
 #nurse-call fieldset {
 	text-align: center;
 }
