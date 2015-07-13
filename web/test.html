@@ -39,6 +39,20 @@ var nurse_call_device = {
     "zone":"ALL"
 }
 
+var qs = (function(a) {
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i)
+    {
+        var p=a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+})(window.location.search.substr(1).split('&'));
+
 $(document).ready(function() {
     mst = new MovementStartTrigger(function() {
         msg = {
@@ -81,8 +95,7 @@ $(document).ready(function() {
 
 
 var ros = new ROSLIB.Ros({
-    url : 'ws://localhost:9090'
-    // url : 'ws://192.168.0.12:9090'
+    url : qs['ros'] || 'ws://localhost:9090'
 });
 ros.socket.onclose = function(obj) {
     console.log('Connection closed')
