@@ -149,6 +149,10 @@ var updateDeviceClient = new ROSLIB.Service({
     serviceType: 'peac_bridge/get_device_info'
 })
 
+$(window).on('beforeunload', function(){
+    ros.close();
+});
+
 function wait(cond, action) {
     if(typeof(action)==='undefined') action = function() {}
     if (!cond()) {
