@@ -1,14 +1,3 @@
-1821
-1822
-1824
-2104
-2105
-4061
-4207
-4229
-4230
-4824
-5392
 {
   "4096": {
     "usage": {}, 
@@ -1242,7 +1231,8 @@
     "controlId": 4824, 
     "widget": "button", 
     "options": {
-      "type": "momentary"
+      "display_name": "<img src=\"images/power.png\" alt=\"Power\"/>", 
+      "type": "toggle"
     }
   }, 
   "4825": {
@@ -1329,7 +1319,9 @@
     }
   }, 
   "4891": {
-    "usage": {}, 
+    "usage": {
+      "tvroom": 2
+    }, 
     "controlId": 4891, 
     "widget": "button", 
     "options": {
@@ -1338,7 +1330,9 @@
     }
   }, 
   "4892": {
-    "usage": {}, 
+    "usage": {
+      "tvroom": 1
+    }, 
     "controlId": 4892, 
     "widget": "button", 
     "options": {
@@ -1349,7 +1343,7 @@
   "4893": {
     "usage": {}, 
     "controlId": 4893, 
-    "widget": "infoDisplay", 
+    "widget": "numericRocker", 
     "options": {
       "textPost": "", 
       "textPre": ""
@@ -4129,7 +4123,9 @@
     }
   }, 
   "4062": {
-    "usage": {}, 
+    "usage": {
+      "steves": 4
+    }, 
     "controlId": 4062, 
     "widget": "button", 
     "options": {
