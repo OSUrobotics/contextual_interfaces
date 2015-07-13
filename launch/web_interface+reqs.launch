@@ -1,0 +1,5 @@
+<launch>
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+  <include file="$(find peac_bridge)/launch/peac_bridge.launch"/>
+  <node name="simple_http_server" pkg="contextual_interfaces" type="webserver.sh" args="9999"/>
+</launch>
