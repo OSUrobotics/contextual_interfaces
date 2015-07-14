@@ -430,7 +430,6 @@ $.widget("peac.buttonGroup", $.peac.control, {
             this.buttonGroup.append(button)
         }, this))
 
-
         this.buttonGroup
             .jqxButtonGroup({mode: 'radio'})
             .on('buttonclick', $.proxy(this._buttonclickCallback, this))
@@ -441,6 +440,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
             .addClass('control')
             // .width('1em')
             .height('1em')
+        this.buttonGroup.jqxButtonGroup('setSelection', Number(this.options.control.numVal)-1)
     },
     _buttonclickCallback: function(event) {
         if(!this.ignoreEvents) {
