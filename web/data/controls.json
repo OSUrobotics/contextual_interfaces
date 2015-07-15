@@ -1581,21 +1581,21 @@
   }, 
   "4843": {
     "widget": "button", 
-    "ignore": 0, 
+    "ignore": 2, 
     "usage": {}, 
     "controlId": 4843, 
     "options": {
-      "ignore": 0, 
+      "ignore": 2, 
       "type": "momentary"
     }
   }, 
   "4863": {
     "widget": "button", 
-    "ignore": 0, 
+    "ignore": 2, 
     "usage": {}, 
     "controlId": 4863, 
     "options": {
-      "ignore": 0, 
+      "ignore": 2, 
       "type": "momentary"
     }
   }, 
