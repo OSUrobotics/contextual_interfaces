@@ -36,4 +36,12 @@ if __name__ == '__main__':
         d['options'] = options
         d['usage'] = get_usage(d['controlId'])
         control_dict[d['controlId']] = d
-    print json.dumps(control_dict, indent=2)
+
+    c.execute('SELECT * from devices')
+    device_dict = {}
+    for d in c.fetchall():
+        deviceId = d['deviceId']
+        del d['deviceId']
+        device_dict[deviceId] = d
+        # print d
+    print json.dumps({'controls': control_dict, 'devices': device_dict}, indent=2)

@@ -28,6 +28,7 @@
     <script>
 
 var controlData;
+var deviceData;
 var mutexDevices;
 var locationReady = false;
 
@@ -66,9 +67,10 @@ $(document).ready(function() {
     })
     $('body').click(mst.reset)
 
-
+console.log('asdf')
     $.getJSON('data/controls.json', function(data) {
-        controlData = data
+        controlData = data['controls']
+        deviceData = data['devices']
         call = $('<div>').device({
             device: nurse_call_device.device,
             controls: [nurse_call_device],
