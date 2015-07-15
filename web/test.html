@@ -67,7 +67,6 @@ $(document).ready(function() {
     })
     $('body').click(mst.reset)
 
-console.log('asdf')
     $.getJSON('data/controls.json', function(data) {
         controlData = data['controls']
         deviceData = data['devices']
@@ -91,8 +90,6 @@ console.log('asdf')
     })
     updateLocationBox()
     // transitionListener.subscribe(transitionCallback)
-    console.log(controlData)
-
 })
 
 
@@ -249,7 +246,6 @@ function transitionCallback(msg) {
         elem.each(function() {
             // don't remove controls that the use is hovering over
             if(!$(this).data('hover')) {
-                console.log()
                 if($(this).attr('id')=='Light' || $(this).attr('id')=='Door') {
                     $(this).device('destroy')
                     $(this).hide()
