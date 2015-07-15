@@ -9,13 +9,18 @@ div.device {
 
 div.control {
 	/*border: 1px solid black;*/
-	padding: .75em;
+	padding: .5em;
 	clear: none;
 	display: inline-block;
 	text-align: center;
 	line-height: 0;
 	vertical-align: middle;
 	overflow: hidden;
+}
+
+div.jqx-buttongroup .jqx-button {
+	padding-top: 1.55em;
+	padding-bottom: 0.8em;
 }
 
 div.control button, div.control, .jqx-button {

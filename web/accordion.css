@@ -34,7 +34,7 @@ div.device.accordion-container {
   list-style: none;
   margin: 30px 0;
   padding: 0;
-  height: 290px;
+  height: 265px;
   overflow: hidden;
   /*background: #7d8d96;*/
   border: 1px solid gray;
@@ -44,7 +44,7 @@ div.device.accordion-container {
   float: left;
   /*border-left;*/
   display: block;
-  height: 270px;
+  height: 235px;
   width: 100px;
   padding: 15px 0;
   overflow: hidden;
