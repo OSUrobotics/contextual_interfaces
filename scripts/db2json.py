@@ -26,7 +26,7 @@ if __name__ == '__main__':
     control_dict = {}
     # for opts, controlId, widget, display_name in c.fetchall():
     for d in c.fetchall():
-        options = {}
+        options = {'ignore': d['ignore']}
         if d['options']:
             options.update(json.loads(d['options']))
         else: d['options'] = {}
