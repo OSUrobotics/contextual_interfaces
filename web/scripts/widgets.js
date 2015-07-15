@@ -33,7 +33,7 @@ $.widget("peac.device", {
         var device = this.options.device;
         // var controls = this.options.controls
         var controls = this._sort_controls(this.options.controls)
-        var label = $('<'+this.options.label+'>'+device.name+'<'+this.options.label+'>')
+        var label = $('<'+this.options.label+'>'+device.name+'</'+this.options.label+'>')
         var fs = $('<'+this.options.container+'>').attr('name', device.name)
             .append(label)
         this.options.fs = fs
@@ -58,6 +58,21 @@ $.widget("peac.device", {
         })
         this.widgets = widgets
         this.fs = fs
+
+        if(deviceData.hasOwnProperty(device.deviceId)) {
+            indicatorControlId = deviceData[device.deviceId]['indicatorDevice']
+            indicatorControl = controlData[indicatorControlId]
+            opts = indicatorControl.options
+            opts.control = {
+                controlId: indicatorControl.controlId,
+                device: this.options.device,
+                numVal: 0,
+                zone: indicatorControl.zone
+            }
+            opts.textPre = ': '
+            indicatorWidget = $('<span>').infoDisplay(opts)
+            label.append(indicatorWidget)
+        }
     },
     _destroy: function() {
         this.widgets.forEach(function(widget) {
