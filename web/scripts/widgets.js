@@ -47,12 +47,14 @@ $.widget("peac.device", {
 
         var widgets = []
         controls.forEach(function(control) {
-            widget = controlData[control.controlId]['widget']
-            opts = {control: control}
-            $.extend(opts, controlData[control.controlId]['options'])
-            controlWid = $('<div>')[widget](opts)
-            controlWid.appendTo(fs)
-            widgets.push(controlWid)
+            if(!controlData[control.controlId].ignore) {
+                widget = controlData[control.controlId]['widget']
+                opts = {control: control}
+                $.extend(opts, controlData[control.controlId]['options'])
+                controlWid = $('<div>')[widget](opts)
+                controlWid.appendTo(fs)
+                widgets.push(controlWid)
+            }
         })
         this.widgets = widgets
         this.fs = fs
@@ -220,7 +222,7 @@ $.widget("peac.control", {
         // console.log('Not implemented')
     },
     _hover: function() {
-        console.log('deviceId: ' + this.options.control.device.deviceId, 'controlId: ' + this.options.control.controlId)
+        console.log('deviceId: ' + this.options.control.device.deviceId, 'controlId: ' + this.options.control.controlId, this.options.control.numVal)
     }
 
 })
@@ -253,6 +255,7 @@ $.widget("peac.button", $.peac.control, {
 
     },
     _setNumVal: function(event, numVal) {
+        event.stopPropagation()
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
@@ -310,6 +313,7 @@ $.widget("peac.switch", $.peac.control, {
         this.button = button
     },
     _setNumVal: function(event, numVal) {
+        event.stopPropagation()
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
             var button = $(this.button).data('jqxSwitchButton').instance
@@ -345,6 +349,7 @@ $.widget("peac.infoDisplay", $.peac.control, {
         return this.options.textPre + text + this.options.textPost
     },
     _setNumVal: function(event, numVal) {
+        event.stopPropagation()
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
@@ -416,6 +421,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
         var label = $('<div>')
             .addClass('label')
             .text(name)
+        this.label = label
 
         this.element
             .addClass('buttongroup')
@@ -441,6 +447,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
             // .width('1em')
             .height('1em')
         this.buttonGroup.jqxButtonGroup('setSelection', Number(this.options.control.numVal)-1)
+        this._showIndicator()
     },
     _buttonclickCallback: function(event) {
         if(!this.ignoreEvents) {
@@ -470,6 +477,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
         }
     },
     _setNumVal: function(event, numVal) {
+        event.stopPropagation()
         if(!this.ignoreUpdates) {
             this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
@@ -478,8 +486,24 @@ $.widget("peac.buttonGroup", $.peac.control, {
             }
             setTimeout($.proxy(function() {
                 this.ignoreEvents = false
-            }, this), 500)
+            }, this), 1000)
         }
 
     },
+    _showIndicator: function() {
+        if(this.options.indicator !== undefined) {
+            indicatorControl = controlData[this.options.indicator]
+            opts = indicatorControl.options
+            opts.control = {
+                controlId: indicatorControl.controlId,
+                device: this.options.device,
+                numVal: 0,
+                zone: indicatorControl.zone
+            }
+            opts.textPre = ' ('
+            opts.textPost = ')'
+            indicatorWidget = $('<span>').infoDisplay(opts)
+            this.label.append(indicatorWidget)
+        }
+    }
 })
