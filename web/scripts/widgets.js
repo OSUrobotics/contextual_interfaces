@@ -383,7 +383,9 @@ $.widget("peac.numericRocker", $.peac.control, {
     options: {
         textPre: '',
         textPost: '',
-        orientation: 'horizontal'
+        orientation: 'horizontal',
+        buttonPrefix: '',
+        hideName: false
     },
     _create: function() {
         this._super('_create')
@@ -397,10 +399,12 @@ $.widget("peac.numericRocker", $.peac.control, {
             .addClass('label')
             .text(name)
 
+        if(this.options.buttonPrefix)
+            this.options.buttonPrefix += ' '
 
         var incrButton = $('<div>').button({
             control: this.options.control,
-            display_name: '<span class="symbol">&#9650;</span>',
+            display_name: this.options.buttonPrefix + '<span class="symbol">&#9650;</span>',
             numValTransformer: function(numVal) {
                 return Number(numVal) + 1
             }
@@ -408,7 +412,7 @@ $.widget("peac.numericRocker", $.peac.control, {
 
         var decrButton = $('<div>').button({
             control: this.options.control,
-            display_name: '<span class="symbol">&#9660;</span>',
+            display_name: this.options.buttonPrefix + '<span class="symbol">&#9660;</span>',
             numValTransformer: function(numVal) {
                 return Number(numVal) - 1
             }
@@ -416,8 +420,9 @@ $.widget("peac.numericRocker", $.peac.control, {
 
         var valueDisplay = $('<div>').infoDisplay(this.options)
 
+        if(!this.options.hideName)
+            this.element.append(label)
         this.element
-            .append(label)
             .append(incrButton)
             .append(valueDisplay)
             .append(decrButton)

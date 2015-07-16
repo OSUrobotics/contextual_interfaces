@@ -5122,8 +5122,8 @@
       "widget": "button", 
       "ignore": 0, 
       "usage": {
-        "entryway": 5, 
-        "steves": 5
+        "entryway": 50, 
+        "steves": 50
       }, 
       "controlId": 4061, 
       "options": {
@@ -5136,7 +5136,7 @@
       "widget": "button", 
       "ignore": 0, 
       "usage": {
-        "steves": 4
+        "steves": 40
       }, 
       "controlId": 4062, 
       "options": {
@@ -5152,13 +5152,16 @@
       "controlId": 4063, 
       "options": {
         "ignore": 0, 
-        "type": "momentary"
+        "hideName": true, 
+        "buttonPrefix": "Vol"
       }
     }, 
     "4064": {
       "widget": "button", 
       "ignore": 0, 
-      "usage": {}, 
+      "usage": {
+        "steves": 30
+      }, 
       "controlId": 4064, 
       "options": {
         "ignore": 0, 

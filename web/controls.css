@@ -8,7 +8,7 @@ div.device {
 }
 
 div.control {
-	/*border: 1px solid black;*/
+	/* border: 1px solid black; */
 	padding: .5em;
 	clear: none;
 	display: inline-block;
@@ -136,6 +136,7 @@ img {
 	padding-bottom: 0.75em;
 	border-bottom: 1px solid gray;
 
+	color: black;
 }
 
 .rocker div.label {
