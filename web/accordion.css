@@ -29,6 +29,10 @@ div.device.accordion-container {
   font-weight: bold;
   cursor: default;
 }
+
+.accordion .tab .label:hover {
+    background-color: #909090;
+}
 .tab .buttons {
   margin-left: 1em;
   margin-top: 15px;
