@@ -33,7 +33,10 @@ $.widget("peac.device", {
         var device = this.options.device;
         // var controls = this.options.controls
         var controls = this._sort_controls(this.options.controls)
-        var label = $('<'+this.options.label+'>'+device.name+'</'+this.options.label+'>')
+        var displayName = device.name
+        if(deviceData.hasOwnProperty(device.deviceId) && deviceData[device.deviceId]['displayName'])
+            displayName = deviceData[device.deviceId]['displayName']
+        var label = $('<'+this.options.label+'>'+displayName+'</'+this.options.label+'>')
         var fs = $('<'+this.options.container+'>').attr('name', device.name)
             .append(label)
         this.options.fs = fs
@@ -59,7 +62,10 @@ $.widget("peac.device", {
         this.widgets = widgets
         this.fs = fs
 
-        if(deviceData.hasOwnProperty(device.deviceId)) {
+        if(
+               deviceData.hasOwnProperty(device.deviceId)
+            && deviceData[device.deviceId]['indicatorDevice']
+            ) {
             indicatorControlId = deviceData[device.deviceId]['indicatorDevice']
             indicatorControl = controlData[indicatorControlId]
             opts = indicatorControl.options
@@ -171,18 +177,25 @@ $.widget("peac.accordion_section", $.peac.device, {
             else
                 controlWid.appendTo(fs)
         }
+    }
+})
 
+$.widget("peac.elevator", $.peac.device, {
+    options: {
 
-        // controls.forEach(function(control) {
-        //     widget = controlData[control.controlId]['widget']
-        //     opts = {control: control}
-        //     $.extend(opts, controlData[control.controlId]['options'])
-        //     controlWid = $('<div>')[widget](opts)
-        //     controlWid.appendTo(fs)
-
-        // })
-        // this.options.fs.addClass('tab')
-        // this.options.label.addClass('label')
+    },
+    _create: function() {
+        this._super('_create')
+        this.fs.append('<div/>')
+        this.floors = this.options.floors
+        this.floors.forEach($.proxy(function(floor) {
+            control = controlData[floor]
+            control.device = {deviceId: -1}
+            opts = {control: control}
+            $.extend(opts, controlData[control.controlId]['options'])
+            controlWid = $('<div>')[widget](opts)
+            controlWid.appendTo(this.fs)
+        }, this))
     }
 })
 

@@ -43,5 +43,6 @@ if __name__ == '__main__':
         deviceId = d['deviceId']
         del d['deviceId']
         device_dict[deviceId] = d
-        # print d
+        if d['options']:
+            d['options'] = json.loads(d['options'])
     print json.dumps({'controls': control_dict, 'devices': device_dict}, indent=2)

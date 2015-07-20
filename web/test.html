@@ -206,11 +206,17 @@ function transitionCallback(msg) {
             for(var deviceId in devices) {
                 // skip the nurse call since that gets handled on its own
                 if(deviceId!=1950) {
-                    $('<div>').appendTo('#main').device({
+                    var widget = 'device'
+                    var options = {
                         device: devices[deviceId][0].device,
                         controls: devices[deviceId],
                         controlData: controlData
-                    })
+                    }
+                    if(deviceData.hasOwnProperty(deviceId) && deviceData[deviceId]) {
+                        widget = deviceData[deviceId].widget
+                        $.extend(options, deviceData[deviceId].options)
+                    }
+                    $('<div>').appendTo('#main')[widget](options)
                 }
             }
 

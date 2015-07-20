@@ -1,7 +1,21 @@
 {
   "devices": {
+    "1832": {
+      "widget": "elevator", 
+      "indicatorDevice": null, 
+      "displayName": "South Elevator", 
+      "options": {
+        "floors": [
+          2322, 
+          2321
+        ]
+      }
+    }, 
     "1797": {
-      "indicatorDevice": 2099
+      "widget": "device", 
+      "indicatorDevice": 2099, 
+      "displayName": null, 
+      "options": null
     }
   }, 
   "controls": {
@@ -1259,6 +1273,7 @@
       "controlId": 2305, 
       "options": {
         "ignore": 0, 
+        "display_name": "<span class=\"symbol\">&#9660;</span>", 
         "type": "momentary"
       }
     }, 
@@ -1269,6 +1284,7 @@
       "controlId": 2306, 
       "options": {
         "ignore": 0, 
+        "display_name": "<span class=\"symbol\">&#9650;</span>", 
         "type": "momentary"
       }
     }, 
@@ -1409,6 +1425,7 @@
       "controlId": 2321, 
       "options": {
         "ignore": 0, 
+        "display_name": "S 1", 
         "type": "momentary"
       }
     }, 
@@ -1419,6 +1436,7 @@
       "controlId": 2322, 
       "options": {
         "ignore": 0, 
+        "display_name": "S 2", 
         "type": "momentary"
       }
     }, 
