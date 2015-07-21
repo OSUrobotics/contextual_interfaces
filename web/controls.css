@@ -2,6 +2,37 @@ body {
 	font-family: helvetica;
 }
 
+button#submit-login {
+    /* margin-left: 10px; */
+}
+
+div#submit-login {
+    margin: 10px;
+}
+
+input#username {}
+
+div#login-dialog input {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16pt;
+}
+
+input#password {}
+
+input#username {}
+
+div#login-dialog {}
+
+span#login-button {
+    font-size: inherit;
+    padding-left: 0;
+}
+
+div#login-box {
+    padding: 1em;
+}
+
 div.device {
     display: inline-block;
     flex-grow: 1;

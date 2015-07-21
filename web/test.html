@@ -19,6 +19,10 @@
     <script type="text/javascript" src="scripts/jqwidgets/jqxdata.js"></script>
     <script type="text/javascript" src="scripts/jqwidgets/jqxscrollbar.js"></script>
     <script type="text/javascript" src="scripts/jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxinput.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxpasswordinput.js"></script>
+    <script type="text/javascript" src="scripts/jqwidgets/jqxtooltip.js"></script>
+    <script type="text/javascript" src="scripts/jquery.textfill.min.js"></script>
 
 
     <script src="scripts/widgets.js"></script>
@@ -90,6 +94,47 @@ $(document).ready(function() {
         itemHeight: 50
     })
     updateLocationBox()
+
+    $('#username').jqxInput({placeHolder: 'Username', width: "100%"})
+    $('#password').jqxPasswordInput({placeHolder: 'Password', width: "100%"})
+    $('#submit-login').jqxButton({width: "100%"})
+    $('#submit-login').click(function() {
+        logInClient.callService({
+            user: $('#username').val(),
+            password: $('#password').val()
+        }, function(resp) {
+            if(resp.success) {
+                $('#logged-in-user').text($('#username').val())
+                $('#username').val('')
+                $('#password').val('')
+                $('#login-dialog').slideUp()
+            }
+            else {
+                $('#submit-login').jqxTooltip({
+                    content: 'Login failed. Please try again.',
+                    position: 'bottom',
+                    autoHideDelay: 2000
+                })
+                .jqxTooltip('open')
+
+                $('#submit-login').jqxTooltip()
+                .bind('close', function() {
+                    console.log('destroying')
+                    $(this).jqxTooltip('destroy')
+                })
+
+            }
+
+        })
+    })
+    $('#login-button').jqxButton({template: 'link'})
+        .click(function() {
+            $('#login-dialog').toggle()
+        })
+
+    loggedInUserClient.callService({}, function(resp){
+        $('#logged-in-user').text(resp.user)
+    })
     // transitionListener.subscribe(transitionCallback)
 })
 
@@ -110,6 +155,8 @@ var listLocationsClient;
 var zoneLocalizationClient;
 var actuatedClient;
 var updateDeviceClient;
+var logInClient;
+var loggedInUserClient;
 
 var reconnect_interval = -1
 ros.socket.onclose = function(obj) {
@@ -174,6 +221,18 @@ function initROS() {
         ros: ros,
         name: '/peac/get_device_info',
         serviceType: 'peac_bridge/get_device_info'
+    })
+
+    logInClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/peac/login',
+        serviceType: 'peac_bridge/Login'
+    })
+
+    loggedInUserClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/peac/current_user',
+        serviceType: 'peac_bridge/LoggedInUser'
     })
 }
 
@@ -358,9 +417,18 @@ pollInteval = setInterval(function() {
             </section>
         </section>
         <nav id="location-selector">
+            <div id="login-box">Logged in as <span id="logged-in-user"></span><br/>
+                <span id="login-button">Login as someone else</span>
+                <div id="login-dialog" style="display:none">
+                    <input type="text" id="username"/>
+                    <input type="password" id="password"/>
+                    <button id="submit-login">Login</button>
+                </div>
+            </div>
             <h1>Current Location</h1>
             <h2>(click to fix if incorrect)</h2>
             <div id="locations"></div>
         </nav>
+
     </body>
 </html>
