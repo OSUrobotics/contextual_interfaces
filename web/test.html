@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>RoboPEAC</title>
     <meta content="text/html; charset=windows-1252" http-equiv="content-type">
     <script src="eventemitter2.min.js"></script>
     <script src="roslib.min.js"></script>
@@ -96,58 +97,87 @@ $(document).ready(function() {
 var ros = new ROSLIB.Ros({
     url : 'ws://' + (qs['ros'] || 'localhost:9090')
 });
+ros.on('connection', function() {
+    clearInterval(reconnect_interval)
+    console.log('Connected to websocket server.');
+    initROS()
+});
+
+var transitionListener;
+var getControlsClient;
+var updateControlClient;
+var listLocationsClient;
+var zoneLocalizationClient;
+var actuatedClient;
+var updateDeviceClient;
+
+var reconnect_interval = -1
 ros.socket.onclose = function(obj) {
     console.log('Connection closed')
     console.log(obj)
+    // try to reconnect
+    reconnect_interval = setInterval(function() {
+        console.log('Trying to connect to websocket server')
+        ros = new ROSLIB.Ros({
+            url : 'ws://' + (qs['ros'] || 'localhost:9090')
+        });
+        ros.on('connection', function() {
+            clearInterval(reconnect_interval)
+            console.log('Connected to websocket server.');
+            initROS()
+            transitionListener.subscribe(transitionCallback)
+        });
+    }, 5000)
 }
 
 // heartbeatListen(ros)
 
-ros.on('connection', function() {
-    console.log('Connected to websocket server.');
-});
-var transitionListener = new ROSLIB.Topic({
-    ros: ros,
-    name: '/transition',
-    messageType: 'privacy_zones/Transition'
-});
 
-var getControlsClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/get_devices_in_zone',
-    serviceType: 'privacy_zones/DevicesInZone'
-});
+function initROS() {
+    transitionListener = new ROSLIB.Topic({
+        ros: ros,
+        name: '/transition',
+        messageType: 'privacy_zones/Transition'
+    });
 
-var updateControlClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/peac/update_control',
-    serviceType: 'peac_bridge/UpdateControl'
-});
+    getControlsClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/get_devices_in_zone',
+        serviceType: 'privacy_zones/DevicesInZone'
+    });
 
-var listLocationsClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/get_zone_locations',
-    serviceType: 'privacy_zones/GetZoneLocations'
-})
+    updateControlClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/peac/update_control',
+        serviceType: 'peac_bridge/UpdateControl'
+    });
 
-var zoneLocalizationClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/localize_in_zone',
-    serviceType: 'privacy_zones/LocalizeInZone'
-})
+    listLocationsClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/get_zone_locations',
+        serviceType: 'privacy_zones/GetZoneLocations'
+    })
 
-var actuatedClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/actuation_logging_server/report_control_actuated',
-    serviceType: 'peac_bridge/ReportControlActuation'
-})
+    zoneLocalizationClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/localize_in_zone',
+        serviceType: 'privacy_zones/LocalizeInZone'
+    })
 
-var updateDeviceClient = new ROSLIB.Service({
-    ros: ros,
-    name: '/peac/get_device_info',
-    serviceType: 'peac_bridge/get_device_info'
-})
+    actuatedClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/actuation_logging_server/report_control_actuated',
+        serviceType: 'peac_bridge/ReportControlActuation'
+    })
 
+    updateDeviceClient = new ROSLIB.Service({
+        ros: ros,
+        name: '/peac/get_device_info',
+        serviceType: 'peac_bridge/get_device_info'
+    })
+}
+
+initROS()
 $(window).on('beforeunload', function(){
     ros.close();
 });
