@@ -98,7 +98,7 @@ $(document).ready(function() {
     $('#username').jqxInput({placeHolder: 'Username', width: "100%"})
     $('#password').jqxPasswordInput({placeHolder: 'Password', width: "100%"})
     $('#submit-login').jqxButton({width: "100%"})
-    $('#submit-login').click(function() {
+    $('#login-form').submit(function() {
         logInClient.callService({
             user: $('#username').val(),
             password: $('#password').val()
@@ -124,7 +124,8 @@ $(document).ready(function() {
                 })
 
             }
-
+            // prevent the form from reloading the page
+            return false
         })
     })
     $('#login-button').jqxButton({template: 'link'})
@@ -420,9 +421,11 @@ pollInteval = setInterval(function() {
             <div id="login-box">Logged in as <span id="logged-in-user"></span><br/>
                 <span id="login-button">Login as someone else</span>
                 <div id="login-dialog" style="display:none">
+                <form id="login-form" action="javascript:void(0);">
                     <input type="text" id="username"/>
                     <input type="password" id="password"/>
-                    <button id="submit-login">Login</button>
+                    <button type="submit" id="submit-login">Login</button>
+                </form>
                 </div>
             </div>
             <h1>Current Location</h1>
