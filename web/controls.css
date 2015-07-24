@@ -214,9 +214,14 @@ img {
 	text-align: center;
 }
 
+#control-5392 {
+	width: 95%;
+}
+
 #control-5392 button {
 	font-size: xx-large;
 	width: 100%;
+	height: 4em;
 }
 
 .smaller {
