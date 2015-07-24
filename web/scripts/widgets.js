@@ -1,3 +1,16 @@
+// from http://stackoverflow.com/a/15001634
+jQuery.fn.hasOverflown = function () {
+   var res;
+   var cont = $('<div>'+this.text()+'</div>').css("display", "table")
+   .css("z-index", "-1").css("position", "absolute")
+   .css("font-family", this.css("font-family"))
+   .css("font-size", this.css("font-size"))
+   .css("font-weight", this.css("font-weight")).appendTo('body');
+   res = (cont.width()>this.width());
+   cont.remove();
+   return res;
+}
+
 var MovementStartTrigger = function(callback, timeout_time) {
     last_move_time = 0
     if(typeof(timeout)==='undefined')

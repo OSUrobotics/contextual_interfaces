@@ -201,8 +201,8 @@ img {
 }
 
 .square {
-	width: 3.5em;
-	height: 3.5em;
+	width: 65px;
+	height: 65px;
 	overflow: hidden;
 }
 
@@ -217,4 +217,8 @@ img {
 #control-5392 button {
 	font-size: xx-large;
 	width: 100%;
+}
+
+.smaller {
+	font-size: 75% !important;
 }

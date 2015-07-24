@@ -310,6 +310,13 @@ function transitionCallback(msg) {
                 }
             }
 
+            $('button.jqx-button').each(function() {
+                me = $(this)
+                if(me.hasOverflown())
+                    me.addClass('smaller')
+
+            })
+
             // devices.forEach(function(device) {
             //     console.log(device)
             // })
