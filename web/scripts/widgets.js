@@ -257,6 +257,7 @@ $.widget("peac.control", {
             }), function(resp){
                 
             })
+            mst.reset()
         }
     },
     _setNumVal: function(numVal) {
@@ -520,6 +521,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
             }), function(resp){
                 
             })
+            mst.reset()
         }
     },
     _setNumVal: function(event, numVal) {

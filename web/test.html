@@ -65,12 +65,12 @@ $(document).ready(function() {
             caption: 'MOVEMENT_START',
             interface: 'WEB_CONTEXT'
         }
-        return // TODO remove this
+        // return // TODO remove this
         actuatedClient.callService(new ROSLIB.ServiceRequest({
             actuation: msg
         }), function(resp){})
     })
-    $('body').click(mst.reset)
+    $('body').click(mst.reset())
 
     $.getJSON('data/controls.json', function(data) {
         controlData = data['controls']
