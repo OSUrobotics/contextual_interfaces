@@ -1,0 +1,25 @@
+#location-selector {
+	display: none;
+}
+
+#main-container.glass, #main-container.glass #main {
+	width: 100%;
+	float: none;
+	text-align: left;
+	display: block;
+}
+
+#main-container.glass #main .square {
+	width: 48vw;
+	height: 48vh;
+}
+
+.glass div.control {
+	display: inline;
+	padding:0;
+	border-collapse: collapse;
+}
+
+.glass button.jqx-button {
+	font-size: x-large;
+}
