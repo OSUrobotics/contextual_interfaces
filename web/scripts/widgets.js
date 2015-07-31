@@ -252,7 +252,7 @@ $.widget("peac.control", {
                     },
                     device: wid.options.control.device,
                     caption: wid.options.control.name,
-                    interface: 'WEB_CONTEXT'
+                    interface: which_interface
                 }
             }), function(resp){
                 
@@ -516,7 +516,7 @@ $.widget("peac.buttonGroup", $.peac.control, {
                     },
                     device: this.options.control.device,
                     caption: this.options.control.name,
-                    interface: 'WEB_CONTEXT'
+                    interface: which_interface
                 }
             }), function(resp){
                 
