@@ -36,6 +36,7 @@ var controlData;
 var deviceData;
 var mutexDevices;
 var locationReady = false;
+var which_interface = 'WEB_CONTEXT'
 
 var nurse_call_device = {
     "device":{"deviceId":1950,"name":"Nurse Call"},
@@ -63,7 +64,7 @@ $(document).ready(function() {
     mst = new MovementStartTrigger(function() {
         msg = {
             caption: 'MOVEMENT_START',
-            interface: 'WEB_CONTEXT'
+            interface: which_interface
         }
         // return // TODO remove this
         actuatedClient.callService(new ROSLIB.ServiceRequest({
@@ -398,7 +399,7 @@ function updateLocationBox() {
             zoneLocalizationClient.callService({zone: zone.name}, function(resp){})
             msg = {
                 caption: 'ZONE_LOCALIZE: ' + zone.name,
-                interface: 'WEB_CONTEXT'
+                interface: which_interface
             }
             actuatedClient.callService(new ROSLIB.ServiceRequest({
                 actuation: msg
