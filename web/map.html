@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<script type="text/javascript" src="http://cdn.robotwebtools.org/EaselJS/current/easeljs.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/EventEmitter2/current/eventemitter2.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/roslibjs/current/roslib.min.js"></script>
+<script type="text/javascript" src="http://cdn.robotwebtools.org/ros2djs/current/ros2d.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+
+<script type="text/javascript" type="text/javascript">
+  /**
+   * Setup all visualization elements when the page is loaded.
+   */
+
+   function degrees(rad) {
+    return rad * (180/Math.PI)
+   }
+
+   var viewer;
+   var ros;
+   var gridClient;
+   var navArrow;
+
+  function init() {
+    // Connect to ROS.
+    ros = new ROSLIB.Ros({
+      url : 'ws://localhost:9090'
+    });
+
+
+
+    // Create the main viewer.
+    viewer = new ROS2D.Viewer({
+      divID : 'map',
+      width : 1000,
+      height : 600
+    });
+
+    // Setup the map client.
+    gridClient = new ROS2D.OccupancyGridClient({
+      ros : ros,
+      rootObject : viewer.scene
+    });
+    // Scale the canvas to fit to the map
+    gridClient.on('change', function(){
+      viewer.scaleToDimensions(gridClient.currentGrid.width, gridClient.currentGrid.height);
+
+      // shift the map image by its position offset so it's centered in the canvas
+      // TODO: rotate it too
+      viewer.shift(gridClient.currentGrid.pose.position.x, gridClient.currentGrid.pose.position.y)
+    });
+
+    // create an arrow to show the robot's pose
+    navArrow = new ROS2D.NavigationArrow({})
+    navArrow.scaleX = 0.1
+    navArrow.scaleY = 0.1
+
+    viewer.addObject(navArrow)
+
+    // subscribe to amcl pose
+    var poseSub = new ROSLIB.Topic({
+      ros: ros,
+      name: '/amcl_pose',
+      message_type: 'nav_msgs/PoseWithCovarianceStamped'
+    })
+
+    poseSub.subscribe(function(msg) {
+      // set the arrow's position
+      // don't know it needs to be -y and -yaw
+      navArrow.x =  msg.pose.pose.position.x
+      navArrow.y = -msg.pose.pose.position.y
+
+      // convert the orientation quaternion to euler angles
+      quat = new THREE.Quaternion(
+        msg.pose.pose.orientation.x,
+        msg.pose.pose.orientation.y,
+        msg.pose.pose.orientation.z,
+        msg.pose.pose.orientation.w
+      )
+      euler = new THREE.Euler()
+      euler.setFromQuaternion(quat)
+
+      navArrow.rotation = -THREE.Math.radToDeg(euler.z)
+    })
+
+
+  }
+</script>
+</head>
+
+<body onload="init()">
+  <div id="map"></div>
+</body>
+</html>
