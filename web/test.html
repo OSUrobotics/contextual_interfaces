@@ -159,6 +159,7 @@ var actuatedClient;
 var updateDeviceClient;
 var logInClient;
 var loggedInUserClient;
+var ignoreLocationSelect = false;
 
 var reconnect_interval = -1
 ros.socket.onclose = function(obj) {
@@ -332,11 +333,13 @@ function transitionCallback(msg) {
         msg.peac_locations.forEach(function(loc) {
             // $('#locations > option[value='+loc.locationId+']').attr('selected', 'selected')
             // $('#locations').jqxListBox()
+            ignoreLocationSelect = true
             for(var i=0; i<locationItems.length; i++) {
                 if(locationItems[i].value.loc.locationId==loc.locationId) {
                     $('#locations').jqxListBox('selectIndex', i)
                 }
             }
+            ignoreLocationSelect = false
         })
 
     } else { //exit
@@ -394,16 +397,18 @@ function updateLocationBox() {
         $("#locations").jqxListBox('selectIndex', selected)
 
         $("#locations").on('select', function(evt) {
-            zone = evt.args.item.value.zone
-            console.log(zone.name)
-            zoneLocalizationClient.callService({zone: zone.name}, function(resp){})
-            msg = {
-                caption: 'ZONE_LOCALIZE: ' + zone.name,
-                interface: which_interface
+            if(!ignoreLocationSelect) {
+                zone = evt.args.item.value.zone
+                console.log(zone.name)
+                zoneLocalizationClient.callService({zone: zone.name}, function(resp){})
+                msg = {
+                    caption: 'ZONE_LOCALIZE: ' + zone.name,
+                    interface: which_interface
+                }
+                actuatedClient.callService(new ROSLIB.ServiceRequest({
+                    actuation: msg
+                }), function(resp){})
             }
-            actuatedClient.callService(new ROSLIB.ServiceRequest({
-                actuation: msg
-            }), function(resp){})
         })
         locationReady = true
         transitionListener.subscribe(transitionCallback)
