@@ -316,9 +316,9 @@ $.widget("peac.button", $.peac.control, {
         event.stopPropagation()
         if(!this.ignoreUpdates) {
             if(this.options.control.numVal != numVal) {
-                this.ignoreEvents = true
                 this.options.control.numVal = numVal
                 if(this.options.type=="toggle") {
+                    this.ignoreEvents = true
                     if(numVal==0)
                         this.button.jqxToggleButton('unCheck')
                     else
@@ -401,12 +401,9 @@ $.widget("peac.infoDisplay", $.peac.control, {
     },
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
-        if(!this.ignoreUpdates) {
-            if(this.options.control.numVal != numVal) {
-                this.ignoreEvents = true
-                this.options.control.numVal = numVal
-                this.element.text(this._makeText(numVal))
-            }
+        if(this.options.control.numVal != numVal) {
+            this.options.control.numVal = numVal
+            this.element.text(this._makeText(numVal))
         }
     }
 
@@ -528,16 +525,15 @@ $.widget("peac.buttonGroup", $.peac.control, {
                 
             })
             mst.reset()
+            this.ignoreEvents = false
         }
     },
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
-        if(!this.ignoreUpdates) {
-            if(this.options.control.numVal != numVal) {
-                this.ignoreEvents = true
-                this.options.control.numVal = numVal
-                this.buttonGroup.jqxButtonGroup('setSelection', Number(numVal)-1)
-            }
+        if(this.options.control.numVal != numVal) {
+            console.log('setting ignoreEvents: buttonGroup')
+            this.options.control.numVal = numVal
+            this.buttonGroup.jqxButtonGroup('setSelection', Number(numVal)-1)
         }
 
     },
