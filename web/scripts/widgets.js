@@ -230,7 +230,8 @@ $.widget("peac.control", {
     options: {
         numValTransformer: function(numVal) {
             return Number(!Number(numVal))
-        }
+        },
+        alsoUpdate: []
     },
     _create: function() {
         this.ignoreEvents = false
@@ -243,7 +244,9 @@ $.widget("peac.control", {
             .on('peacUpdate', $.proxy(this._setNumVal, this))
             .hover($.proxy(this._hover, this))
     },
-
+    addAlsoUpdate: function(obj) {
+        this.options.alsoUpdate.push(obj)
+    },
     _click_callback: function(evt) {
         var wid = this
         if(false===this.ignoreEvents) {
@@ -257,6 +260,9 @@ $.widget("peac.control", {
             updateControlClient.callService(req, function(resp){
                 // debugControlResp(resp, callTime)
                 wid.options.control.numVal = resp.control.numVal
+                wid.options.alsoUpdate.forEach(function(obj) {
+                    $(obj).trigger('peacUpdate', resp.control.numVal)
+                })
             });
             actuatedClient.callService(new ROSLIB.ServiceRequest({
                 actuation: {
@@ -288,7 +294,7 @@ $.widget("peac.control", {
 $.widget("peac.button", $.peac.control, {
     options: {
         type: "momentary",
-        square: true
+        square: true,
     },
     _create: function() {
         this._super('_create')
@@ -429,6 +435,8 @@ $.widget("peac.numericRocker", $.peac.control, {
             .addClass('label')
             .text(name)
 
+        var valueDisplay = $('<div>').infoDisplay(this.options)
+
         if(this.options.buttonPrefix)
             this.options.buttonPrefix += ' '
 
@@ -437,7 +445,8 @@ $.widget("peac.numericRocker", $.peac.control, {
             display_name: this.options.buttonPrefix + '<span class="symbol">&#9650;</span>',
             numValTransformer: function(numVal) {
                 return Number(numVal) + 1
-            }
+            },
+            alsoUpdate: [valueDisplay]
         })
 
         var decrButton = $('<div>').button({
@@ -445,10 +454,13 @@ $.widget("peac.numericRocker", $.peac.control, {
             display_name: this.options.buttonPrefix + '<span class="symbol">&#9660;</span>',
             numValTransformer: function(numVal) {
                 return Number(numVal) - 1
-            }
+            },
+            alsoUpdate: [valueDisplay]
         })
 
-        var valueDisplay = $('<div>').infoDisplay(this.options)
+        incrButton.button('addAlsoUpdate', decrButton)
+        decrButton.button('addAlsoUpdate', incrButton)
+
 
         if(!this.options.hideName)
             this.element.append(label)
@@ -531,7 +543,6 @@ $.widget("peac.buttonGroup", $.peac.control, {
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
         if(this.options.control.numVal != numVal) {
-            console.log('setting ignoreEvents: buttonGroup')
             this.options.control.numVal = numVal
             this.buttonGroup.jqxButtonGroup('setSelection', Number(numVal)-1)
         }
