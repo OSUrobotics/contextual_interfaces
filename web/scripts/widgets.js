@@ -37,6 +37,20 @@ MovementStartTrigger.prototype.reset = function() {
     last_move_time = 0
 }
 
+function debugControlSent(req) {
+    stamp = Date.now()
+    $('textarea').val($('textarea').val()+'REQ ' +stamp+' '+req.controlId+' -> '+req.numVal+' \n')
+    $('textarea').scrollTop($('textarea')[0].scrollHeight)
+    return stamp
+}
+
+function debugControlResp(resp, stamp) {
+    now = Date.now()
+    $('textarea').val($('textarea').val()+'RESP ' +now+' '+req.controlId+' -> '+req.numVal+' '+(now-stamp)+'\n')
+    $('textarea').scrollTop($('textarea')[0].scrollHeight)
+
+}
+
 $.widget("peac.device", {
     options: {
         container: 'fieldset',
@@ -230,17 +244,18 @@ $.widget("peac.control", {
             .hover($.proxy(this._hover, this))
     },
 
-    _click_callback: function() {
+    _click_callback: function(evt) {
         var wid = this
-        if(!this.ignoreEvents) {
+        if(false===this.ignoreEvents) {
             var newNumVal = wid.options.numValTransformer(wid.options.control.numVal)
 
             req = new ROSLIB.ServiceRequest({
                 controlId: wid.options.control.controlId,
                 numVal: newNumVal
             });
-            
+            // var callTime = debugControlSent(req)
             updateControlClient.callService(req, function(resp){
+                // debugControlResp(resp, callTime)
                 wid.options.control.numVal = resp.control.numVal
             });
             actuatedClient.callService(new ROSLIB.ServiceRequest({
@@ -255,10 +270,11 @@ $.widget("peac.control", {
                     interface: which_interface
                 }
             }), function(resp){
-                
+
             })
             mst.reset()
         }
+        this.ignoreEvents = false
     },
     _setNumVal: function(numVal) {
         // console.log('Not implemented')
@@ -299,8 +315,8 @@ $.widget("peac.button", $.peac.control, {
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
         if(!this.ignoreUpdates) {
-            this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
+                this.ignoreEvents = true
                 this.options.control.numVal = numVal
                 if(this.options.type=="toggle") {
                     if(numVal==0)
@@ -309,9 +325,6 @@ $.widget("peac.button", $.peac.control, {
                         this.button.jqxToggleButton('check')                    
                 }
             }
-            setTimeout($.proxy(function() {
-                this.ignoreEvents = false
-            }, this), 500)
         }
     }
 })
@@ -357,18 +370,14 @@ $.widget("peac.switch", $.peac.control, {
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
         if(!this.ignoreUpdates) {
-            this.ignoreEvents = true
-            var button = $(this.button).data('jqxSwitchButton').instance
             if(this.options.control.numVal != numVal) {
+                this.ignoreEvents = true
                 this.options.control.numVal = numVal
                 if(numVal==0)
-                    button.uncheck()
+                    $(this.button).jqxSwitchButton('uncheck')
                 else if(numVal > 0)
-                    button.check()
+                    $(this.button).jqxSwitchButton('check')
             }
-            setTimeout($.proxy(function() {
-                this.ignoreEvents = false
-            }, this), 500)
         }
     }
 })
@@ -393,14 +402,11 @@ $.widget("peac.infoDisplay", $.peac.control, {
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
         if(!this.ignoreUpdates) {
-            this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
+                this.ignoreEvents = true
                 this.options.control.numVal = numVal
                 this.element.text(this._makeText(numVal))
             }
-            setTimeout($.proxy(function() {
-                this.ignoreEvents = false
-            }, this), 500)
         }
     }
 
@@ -527,14 +533,11 @@ $.widget("peac.buttonGroup", $.peac.control, {
     _setNumVal: function(event, numVal) {
         event.stopPropagation()
         if(!this.ignoreUpdates) {
-            this.ignoreEvents = true
             if(this.options.control.numVal != numVal) {
+                this.ignoreEvents = true
                 this.options.control.numVal = numVal
                 this.buttonGroup.jqxButtonGroup('setSelection', Number(numVal)-1)
             }
-            setTimeout($.proxy(function() {
-                this.ignoreEvents = false
-            }, this), 1000)
         }
 
     },
