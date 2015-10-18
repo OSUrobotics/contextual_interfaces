@@ -35,6 +35,7 @@
 var controlData;
 var deviceData;
 var mutexDevices;
+var actuationHours;
 var locationReady = false;
 var which_interface = 'WEB_CONTEXT'
 
@@ -86,6 +87,9 @@ $(document).ready(function() {
     })
     $.getJSON('data/mutex.json', function(data) {
         mutexDevices = data
+    })
+    $.getJSON('data/actuation.json', function(data) {
+        actuationHours = data
     })
 
     $("#locations").jqxListBox({
@@ -431,6 +435,7 @@ pollInteval = setInterval(function() {
             </section>
         </section>
         <nav id="location-selector">
+            <!-- <textarea rows="6" style="width:100%"></textarea> -->
             <div id="login-box">Logged in as <span id="logged-in-user"></span><br/>
                 <span id="login-button">Login as someone else</span>
                 <div id="login-dialog" style="display:none">

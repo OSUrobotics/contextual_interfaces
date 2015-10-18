@@ -118,9 +118,14 @@ $.widget("peac.device", {
         this._super('destroy')
     },
     _sort_controls: function(controls) {
+        var hour = (new Date()).getHours()
         return controls.sort(function(a, b) {
-            a_usage = controlData[a.controlId].usage[zone.name] || 0
-            b_usage = controlData[b.controlId].usage[zone.name] || 0
+            // a_usage = controlData[a.controlId].usage[zone.name] || 0
+            // b_usage = controlData[b.controlId].usage[zone.name] || 0
+            // grab time usage here
+            // console.log(hour + ", " + a.controlId)
+            a_usage = (actuationHours[a.controlId] || {})[hour] || 0
+            b_usage = (actuationHours[b.controlId] || {})[hour] || 0
             return b_usage - a_usage
         })
     }
@@ -286,7 +291,9 @@ $.widget("peac.control", {
         // console.log('Not implemented')
     },
     _hover: function() {
-        console.log('deviceId: ' + this.options.control.device.deviceId, 'controlId: ' + this.options.control.controlId, this.options.control.numVal)
+        // console.log('deviceId: ' + this.options.control.device.deviceId, 'controlId: ' + this.options.control.controlId, this.options.control.numVal)
+        hour = new Date().getHours()
+        console.log((actuationHours[this.options.control.controlId] || {})[hour] || 0)
     }
 
 })
