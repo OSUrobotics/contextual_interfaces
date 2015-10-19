@@ -262,20 +262,45 @@ function wait(cond, action) {
 }
 
 var last_zone = ''
-var devicesIds = [];
+var deviceIds = [];
+var allDeviceIds = [];
 var devices
+var allDevices
+var lastTransitionMsg;
+
+function reloadZone() {
+    lastTransitionMsg.action = 0
+    transitionCallback()
+    lastTransitionMsg.action = 1
+    transitionCallback()
+}
 
 function transitionCallback(msg) {
+    msg = msg || lastTransitionMsg
     request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 0})
     // request = new ROSLIB.ServiceRequest({zone : msg.zone.name, which: 1})
     if(msg.action==1) { //enter
+        lastTransitionMsg = msg
         console.log("Entered " + msg.zone.name)
         last_zone = msg.zone.name
 
         // get all the controls in this zone and add them
         getControlsClient.callService(request, function(resp) {
+            // oldDeviceIds = deviceIds
+            oldDevices = devices
             devices = organizeByDevice(resp.controls)
+            allDevices = $.extend({}, devices)
             deviceIds = Object.keys(devices)
+
+            // remove any devices that are already being displayed
+            if(allDeviceIds) {
+                for(var dev in devices) {
+                    if(allDeviceIds.indexOf(dev) > -1) {
+                        delete devices[dev]
+                    }
+                }
+            }
+
             specialDevices = mergeByType(devices, ['Door', 'Light'])
             mutexGroups = mergeMutex(devices, mutexDevices)
 
@@ -330,6 +355,10 @@ function transitionCallback(msg) {
             //     controlbox = makeControl(this);
             //     $("#main").append(controlBox);
             // })
+
+            // merge old devices and new so we know all the devices being displayed
+            $.extend(devices, oldDevices)
+            allDeviceIds = Object.keys(allDevices)
         })
 
         // update the location select box
@@ -345,7 +374,6 @@ function transitionCallback(msg) {
             }
             ignoreLocationSelect = false
         })
-
     } else { //exit
         console.log("Exited " + msg.zone.name)
 
@@ -419,11 +447,38 @@ function updateLocationBox() {
     })
 }
 
+function millisToNextHour() {
+    now = new Date()
+    nextHour = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours()+1, 0, 0, 0)
+    return nextHour - now
+}
+
 pollInteval = setInterval(function() {
     if(typeof(deviceIds) != 'undefined') {
         pollPeac(deviceIds, updateDeviceClient)
     }
 }, 5000)
+
+
+var timeRefresh = setTimeout(function() {
+    doTimeRefresh()
+}, millisToNextHour())
+
+
+function doTimeRefresh() {
+    // if there has been movement lately, wait a few seconds
+    var interval;
+    if(mst.recent_movement()) {
+        interval = 5000
+        console.log('recent movement, trying again in ' + interval)
+    } else {
+        reloadZone()
+        interval = millisToNextHour()
+        console.log('reloaded. Reloading again in ' + interval)
+    }
+    setTimeout(doTimeRefresh, interval)
+}
+
     </script>
     <body>
         <section id="main-container">

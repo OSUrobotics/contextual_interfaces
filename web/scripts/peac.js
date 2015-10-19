@@ -43,10 +43,13 @@ function mergeMutex(devices, mutex) {
 	mutex.forEach(function(group) { // for each mutex
 		var deviceGroup = {}
 		group.forEach(function(dev) { // for each device in the mutex
-			deviceGroup[dev] = devices[dev]
-			delete devices[dev]
+			if(dev in devices) {
+				deviceGroup[dev] = devices[dev] // fill in the device info
+				delete devices[dev] // then delete it from the list of devices 
+			}
 		})
-		groups.push(deviceGroup)
+		if(Object.keys(deviceGroup).length)
+			groups.push(deviceGroup)
 	})
 	return groups
 }

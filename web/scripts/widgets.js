@@ -12,13 +12,13 @@ jQuery.fn.hasOverflown = function () {
 }
 
 var MovementStartTrigger = function(callback, timeout_time) {
-    last_move_time = 0
+    last_move_time = new Date(0)
     if(typeof(timeout)==='undefined')
         timeout_time = 5000
     else
         timeout_time = timeout_time
+    this.timeout = timeout_time
     callback = callback
-
 
     $('body').mousemove(function(evt) {
         now = (new Date()).getTime()
@@ -31,11 +31,24 @@ var MovementStartTrigger = function(callback, timeout_time) {
 }
 /*
  * Causes the next movement to trigger the 
- * callback regardles of timeout
+ * callback regardless of timeout
  */
 MovementStartTrigger.prototype.reset = function() {
-    last_move_time = 0
+    last_move_time = new Date(0)
 }
+
+MovementStartTrigger.prototype.get_last_movement_time = function() {
+    return last_move_time
+}
+
+MovementStartTrigger.prototype.get_time_since_last_movement = function() {
+    return new Date() - last_move_time
+}
+
+MovementStartTrigger.prototype.recent_movement = function() {
+    return (new Date() - last_move_time) <= this.timeout
+}
+
 
 function debugControlSent(req) {
     stamp = Date.now()
